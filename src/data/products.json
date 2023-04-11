@@ -1,0 +1,18 @@
+[
+  { "id": 1, "name": "Lotus Breath x3", "price": 7500 },
+  { "id": 2, "name": "Sweet Dark CBD x5", "price": 7500 },
+  { "id": 3, "name": "White Delicious x3", "price": 7500 },
+  { "id": 4, "name": "Aloja x3", "price": 7500 },
+  { "id": 5, "name": "Pampa Chem x3", "price": 7500 },
+  { "id": 6, "name": "MK Kush x5", "price": 9500 },
+  { "id": 7, "name": "Aurorita x3", "price": 7500 },
+  { "id": 8, "name": "Wedding Scout x3", "price": 7500 },
+  { "id": 9, "name": "Tierra del Fuego x3", "price": 7500 },
+  { "id": 10, "name": "Pampa Saurus x3", "price": 7500 },
+  { "id": 11, "name": "Dulce de Leche x5", "price": 10500 },
+  { "id": 12, "name": "Antártida x3", "price": 7500 },
+  { "id": 13, "name": "Uritorco Kush x3", "price": 7500 },
+  { "id": 14, "name": "Kush Delicius x3", "price": 7500 },
+  { "id": 15, "name": "Summer Rainbows x3", "price": 7500 },
+  { "id": 16, "name": "Sunset Tangie x3", "price": 7500 }
+]

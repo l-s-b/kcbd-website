@@ -1,0 +1,17 @@
+body {
+    --color1: #FADD22;
+    --color2: #44AA33;
+    --color3: #FF5511;
+    --myBlack: #112211; 
+    --myWhite: #EEEEDD; 
+}
+
+.bg1, .myWhite-bg { color: var(--myBlack); }
+.bg2, .bg3, .myBlack-bg { color: var(--myWhite); }
+
+.navLogo {
+    height: 5rem;
+    width: 5rem;
+}
+
+
