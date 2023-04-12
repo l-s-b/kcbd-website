@@ -3,6 +3,7 @@ import MuiNavbar from '../comps/MuiNavbar';
 import products from '../data/products.json';
 import WB from '../comps/WhatsAppButton';
 import MuiCard from '../comps/MuiCard';
+import Footer from '../comps/Footer';
 
 export default function Home() {
   return (<>
@@ -13,6 +14,7 @@ export default function Home() {
           )}</div>
         </div>
         <WB />
+        <Footer />
     </>
   )
 }

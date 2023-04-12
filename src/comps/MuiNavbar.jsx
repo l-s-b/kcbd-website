@@ -2,6 +2,8 @@ import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
+import { NavLink } from 'react-router-dom';
+import data from '../data/variables.json';
 import kLogo from "../assets/kLogo.jpeg";
 import "../css/Custom.css";
 
@@ -48,17 +50,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function MuiNavbar() {
-  const navItems = ["Productos", "Preguntas Frecuentes", "Contacto"];
+  const contact = `https://api.whatsapp.com/send?phone=${data.contact.phone_test}&text=${data.contact.reachout}`
+  const navItems = [["Productos", "/"], ["Preguntas Frecuentes", "/faq"], ["Contacto", contact]];
   return (
-      <AppBar class="bg1 pad05" position="static">
+      <AppBar class="bg1 pad05 vw100 fixed z30">
         <Toolbar>
           <div className="flex w100 between">
-            <img className="navLogo" src={kLogo} alt="Kundalini CBD" />
+            <NavLink to="/"><img className="navLogo" src={kLogo} alt="Kundalini CBD" /></NavLink>
             <Box className="flex row evenly pad1 centerY">
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: "#fff" }}>
-                  {item}
-                </Button>
+                <a href={item[1]}>
+                  <Button id="myBlack-txt" key={item} sx={{ color: "#fff" }}>
+                    {item[0]}
+                  </Button>
+                </a>
               ))}
               <Search>
                 <SearchIconWrapper>
