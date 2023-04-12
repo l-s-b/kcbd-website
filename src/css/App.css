@@ -70,6 +70,8 @@ input::-webkit-inner-spin-button {
 .pad1 { padding: 1rem; }
 .pad2 { padding: 2rem; }
 
+/* MARGINS */
+.m1rem { margin: 1rem; }
 
 /* VIEWPORT */
 .vw100 { width: 100vw; }
@@ -94,9 +96,9 @@ input::-webkit-inner-spin-button {
 .font1rem { font-size: 1rem; }
 
 /* BACKGROUND SOLID COLORS */
-.bg1 { background-color: var(--color1); }
-.bg2 { background-color: var(--color2); }
-.bg3 { background-color: var(--color3); }
+.bg1, #bg1 { background-color: var(--color1); }
+.bg2, #bg2 { background-color: var(--color2); }
+.bg3, #bg3 { background-color: var(--color3); }
 .myBlack-bg { background-color: var(--myBlack); }
 .myWhite-bg { background-color: var(--myWhite); }
 .black-bg { background-color: black; }

@@ -2,13 +2,16 @@ import React from 'react';
 import MuiNavbar from '../comps/MuiNavbar';
 import products from '../data/products.json';
 import WB from '../comps/WhatsAppButton';
+import MuiCard from '../comps/MuiCard';
 
 export default function Home() {
   return (<>
         <MuiNavbar />
-        <div>{products.map(p => <div className="col">
-          {p.name} - {p.price}
-        </div>)}</div>
+        <div className="vw100 flex centerX myBlack-bg">
+          <div className="flex row wrap vw75 bg2 centerX">{products.map(
+            p => <MuiCard id="bg1" className="m1rem" item={p} />
+          )}</div>
+        </div>
         <WB />
     </>
   )

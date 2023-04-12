@@ -52,24 +52,24 @@ export default function MuiNavbar() {
   return (
       <AppBar class="bg1 pad05" position="static">
         <Toolbar>
-          <img className="navLogo" src={kLogo} alt="Kundalini CBD" />
           <div className="flex w100 between">
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <img className="navLogo" src={kLogo} alt="Kundalini CBD" />
+            <Box className="flex row evenly pad1 centerY">
               {navItems.map((item) => (
                 <Button key={item} sx={{ color: "#fff" }}>
                   {item}
                 </Button>
               ))}
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
             </Box>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
           </div>
         </Toolbar>
       </AppBar>
