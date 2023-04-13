@@ -9,6 +9,7 @@
     },
     "navbar": ["Productos", "Preguntas Frecuentes", "Contacto"],
     "footer": {
+        "logoAlt": "KUNDALINI CBD",
         "col1": {
             "title": "About",
             "content": "Lorem ipsum dolor sit amet. Te agachás y tel amet."
