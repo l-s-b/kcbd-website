@@ -4,12 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import Image from './Image';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import TabLink from './TabLink';
+import { Link } from 'react-router-dom';
 
 export default function MuiCard({id, className, item}) {
   return (
     <Card id={id} className={className} sx={{ width: '16rem' }}>
-        <TabLink to={`/products/${item.id}`}>
+        <Link to={`/products/${item.id}`}>
             <CardActionArea>
                 <Image fileName={item.filename} alt={item.name} className=" flex centerXY" style={{maxHeight: "16rem", maxWidth: "16rem"}} />
                 <CardContent className="center-txt">
@@ -21,7 +21,7 @@ export default function MuiCard({id, className, item}) {
                 </Typography>
                 </CardContent>
             </CardActionArea>
-        </TabLink>
+        </Link>
     </Card>
   );
 }
