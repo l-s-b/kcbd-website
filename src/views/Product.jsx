@@ -23,18 +23,18 @@ export default function Product() {
   return ( 
     <>
       <MuiNavbar />
-      <div className="vw100 flex centerX myBlack-bg">
-        <div className="flex row vw75 bg2 centerX">
+      <div className="vw100 flex centerX bg2">
+        <div className="flex row vw75 bg1 m2rem centerX2 br2">
           <Image className="w50" fileName={myProduct.filename} alt={myProduct.name} />
           <div className="w50 centerXY flexCh centerX centerXch">
             <h2>{myProduct.name}</h2>
             <h3>${myProduct.price}</h3>
-            <center id="centerX2" className="w50 pill row evenly myBlack-bg pad05 m1rem">
-              Cantidad: 
-              <Counter qty={qty} changeFx={count => handleCounter(count)} btn="bg1" />
+            <center id="centerX2" className="w-fit pill centerYch row wrap evenly myBlack-bg pad1 m1">
+              <span>Cantidad: </span>
+              <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill hw2rem" />
               <b>(${qty * myProduct.price})</b>
             </center>
-            <button className="w-fit pad1 pill flex centerXY" onClick={handleCart}>Enviar Pedido!</button>
+            <button className="pad1 pill bg2 centerXY" onClick={handleCart}>Enviar Pedido!</button>
           </div>
         </div>
       </div>
