@@ -8,9 +8,9 @@ import Footer from '../comps/Footer';
 export default function Home() {
   return (<>
         <MuiNavbar />
-        <div className="vw100 flex centerX myBlack-bg">
-          <div className="flex row wrap vw75 bg2 centerX">{products.map(
-            p => <MuiCard id="bg1" className="m1rem" item={p} />
+        <div className="vw100 flex centerX bg2">
+          <div className="flex row wrap vw90 bg2 centerX">{products.map(
+            p => <MuiCard id="bg1" className="m1" item={p} />
           )}</div>
         </div>
         <WB />

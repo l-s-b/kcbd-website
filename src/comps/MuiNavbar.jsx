@@ -1,9 +1,8 @@
-import * as React from "react";
+import { useState, useEffect, useRef } from 'react';
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
-import { Search as SearchIcon } from "@mui/icons-material";
+/* import { Search as SearchIcon } from "@mui/icons-material"; */
 import { NavLink } from 'react-router-dom';
-import data from '../data/variables.json';
 import kLogo from "../assets/kLogo.jpeg";
 import "../css/Custom.css";
 
@@ -50,22 +49,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function MuiNavbar() {
-  const contact = `https://api.whatsapp.com/send?phone=${data.contact.phone_test}&text=${data.contact.reachout}`
-  const navItems = [["Productos", "/"], ["Preguntas Frecuentes", "/faq"], ["Contacto", contact]];
+  const navItems = [["Productos", "/"], ["Preguntas Frecuentes", "/faq"]];
+  const headerRef = useRef(null);
+  const marginRef = useRef(null);
+  const [headerHeight, setHeaderHeight] = useState("nada");
+  useEffect(() => {
+    if (headerRef) {
+      console.log('useMargin')
+      setHeaderHeight(headerRef.current.clientHeight)
+      marginRef.current.style.height = headerHeight + "px";
+    }
+  }, [headerHeight])
   return (
-      <AppBar class="bg1 pad05 vw100 fixed z30">
+    <>
+      <AppBar className="pad05 vw100 fixed z30" id="bg1" ref={headerRef}>
         <Toolbar>
           <div className="flex w100 between">
             <NavLink to="/"><img className="navLogo" src={kLogo} alt="Kundalini CBD" /></NavLink>
             <Box className="flex row evenly pad1 centerY">
               {navItems.map((item) => (
-                <a href={item[1]}>
-                  <Button id="myBlack-txt" key={item} sx={{ color: "#fff" }}>
+                <a href={item[1]} key={item}>
+                  <Button id="myBlack-txt" sx={{ color: "#fff" }}>
                     {item[0]}
                   </Button>
                 </a>
               ))}
-              <Search>
+             {/*  <Search>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
@@ -73,10 +82,12 @@ export default function MuiNavbar() {
                   placeholder="Search…"
                   inputProps={{ "aria-label": "search" }}
                 />
-              </Search>
+              </Search> */}
             </Box>
           </div>
         </Toolbar>
       </AppBar>
+      <div ref={marginRef} className='bg2'></div>
+      </>
   );
 }

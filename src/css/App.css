@@ -83,8 +83,25 @@ input::-webkit-inner-spin-button {
   margin: 0;
   margin-block: 0;
 }
-.m1rem { margin: 1rem; }
+.m05 { margin: 0.5rem; }
+.m1 { margin: 1rem; }
+.m1x {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.m1y {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .m2rem { margin: 2rem; }
+.m1x {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.m1y {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 /* RADII */
 .br0 { border-radius: 0; }
@@ -92,16 +109,19 @@ input::-webkit-inner-spin-button {
 .br025 { border-radius: 0.25rem; }
 .br05 { border-radius: 0.5rem; }
 .br1 { border-radius: 1rem; }
+.br2 { border-radius: 2rem; }
 .pill { border-radius: 50rem; }
 .oval { border-radius: 50%; }
 
 /* VIEWPORT */
 .vw100 { width: 100vw; }
+.vw90 { width: 90vw; }
 .vw75 { width: 75vw; }
 .vw50 { width: 50vw; }
 .vw25 { width: 25vw; }
 .vw10 { width: 10vw; }
 .vh100 { height: 100vh; }
+.vh100 { height: 90vh; }
 .vh75 { height: 75vh; }
 .vh50 { height: 50vh; }
 .vh25 { height: 25vh; }
@@ -121,6 +141,9 @@ input::-webkit-inner-spin-button {
 .h50  { height: 50%; }
 .h-fit { height: fit-content; }
 .font1rem { font-size: 1rem; }
+.hw1rem { width: 1rem; height: 1rem; }
+.hw2rem { width: 2rem; height: 2rem; }
+.hw5rem { width: 5rem; height: 5rem; }
 
 /* BACKGROUND SOLID COLORS */
 .bg1, #bg1 { background-color: var(--color1); }
