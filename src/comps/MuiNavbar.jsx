@@ -55,7 +55,6 @@ export default function MuiNavbar() {
   const [headerHeight, setHeaderHeight] = useState("nada");
   useEffect(() => {
     if (headerRef) {
-      console.log('useMargin')
       setHeaderHeight(headerRef.current.clientHeight)
       marginRef.current.style.height = headerHeight + "px";
     }

@@ -16,8 +16,8 @@ export default function MuiCard({id, className, item}) {
                 <Typography gutterBottom variant="h5" component="div">
                     {item.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    ${item.price}
+                <Typography color="text.secondary">
+                    <h1>${item.price}</h1>
                 </Typography>
                 </CardContent>
             </CardActionArea>
