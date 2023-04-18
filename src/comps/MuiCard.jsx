@@ -2,23 +2,18 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Image from './Image';
-import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export default function MuiCard({id, className, item}) {
   return (
-    <Card id={id} className={className} sx={{ width: '16rem' }}>
+    <Card id={id} className={className} css2="card">
         <Link to={`/products/${item.id}`}>
             <CardActionArea>
-                <Image fileName={item.filename} alt={item.name} className=" flex centerXY" style={{maxHeight: "16rem", maxWidth: "16rem"}} />
-                <CardContent className="center-txt">
-                <Typography gutterBottom variant="h5" component="div">
-                    {item.name}
-                </Typography>
-                <Typography color="text.secondary">
-                    <h1>${item.price}</h1>
-                </Typography>
+                <Image fileName={item.filename} alt={item.name} className="flex centerXY cardImage" />
+                <CardContent id={id} css="cardContent" className="center-txt flex col">
+                    <label className="itemName">{item.name}</label>
+                    <b className="itemPrice">${item.price}</b>
                 </CardContent>
             </CardActionArea>
         </Link>
