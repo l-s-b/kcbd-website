@@ -7,17 +7,18 @@ import Footer from '../comps/Footer';
 import PageContainer from '../comps/PageContainer';
 
 export default function Home() {
-  return (<>
-        <MuiNavbar />
-        <PageContainer showPattern={true}>
-          <div className="flex row wrap vw90 bg2 centerX">
-            {products.map(
-              p => <MuiCard id="bg1" className="m1 z30" item={p} />
-            )}
-          </div>
-        </PageContainer>
-        <WB />
-        <Footer />
+  return (
+    <>
+      <MuiNavbar />
+      <PageContainer showPattern={true}>
+        <div className="flex row wrap vw90 bg2 centerX">
+          {products.map(
+            p => <MuiCard id="bg1" className="m1 z30" item={p} />
+          )}
+        </div>
+      </PageContainer>
+      <WB />
+      <Footer />
     </>
   )
 }

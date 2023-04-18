@@ -4,6 +4,7 @@ import Home from './views/Home';
 import Product from './views/Product';
 import ScrollToTop from './comps/ScrollToTop';
 import './css/App.css';
+import "./css/Custom.css";
 
 export default function App() {
   return (

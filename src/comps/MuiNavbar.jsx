@@ -4,7 +4,6 @@ import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
 /* import { Search as SearchIcon } from "@mui/icons-material"; */
 import { NavLink } from 'react-router-dom';
 import kLogo from "../assets/kLogo.jpeg";
-import "../css/Custom.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
