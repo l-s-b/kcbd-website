@@ -1,7 +1,8 @@
 {
     "contact": {
-        "fb": "https://www.facebook.com/KundaliniCBD",
+        "fb": "https://www.facebook.com/Kundalini.CBD",
         "ig": "https://www.instagram.com/KundaliniCBD",
+        "pin": "https://www.google.com/maps/dir/Current+Location/Santa+Fe,+Argentina",
         "phone": 5493426303249,
         "phone_test": 598093624630,
         "reachout": "¡Hola! Vengo de KundaliniCBD.com, y quisiera pedir más información.",
@@ -12,7 +13,7 @@
         "logoAlt": "KUNDALINI CBD",
         "col1": {
             "title": "About",
-            "content": "Lorem ipsum dolor sit amet. Te agachás y tel amet."
+            "content": "Lorem ipsum dolor sit amet. Te agachás y tel amet. Sarasa sarasa sarasa, y cada uno a su casa."
         },
         "col2": {
             "title": "Catálogo",
@@ -33,7 +34,7 @@
         },
         "col3": {
             "title": "Más en...",
-            "content": ["kundalinicbd", "kundalinicbd", "Santa Fe, Argentina"]
+            "content": ["kundalini.cbd", "kundalinicbd", "Santa Fe, Argentina"]
         }
     }
 }

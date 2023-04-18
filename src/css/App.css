@@ -51,12 +51,11 @@ input::-webkit-inner-spin-button {
 .row { flex-direction: row; }
 .col { flex-direction: column; }
 .wrap { flex-wrap: wrap; }
-
 .between { justify-content: space-between; }
 .around { justify-content: space-around; }
 .evenly { justify-content: space-evenly; }
-
 .right-txt { text-align: right; }
+.block { display: block; }
 
 /* CENTERING */
 .center-txt { text-align: center; }
@@ -83,6 +82,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
   margin-block: 0;
 }
+.m025 { margin: 0.25rem; }
 .m05 { margin: 0.5rem; }
 .m1 { margin: 1rem; }
 .m1x {
@@ -135,7 +135,14 @@ input::-webkit-inner-spin-button {
 .noScrollXY { overflow: hidden; }
 
 /* SIZES */
+.font1rem { font-size: 1rem; }
+.hw1 { width: 1rem; height: 1rem; }
+.hw2 { width: 2rem; height: 2rem; }
+.hw5 { width: 5rem; height: 5rem; }
+.hw10 { width: 10rem; height: 10rem; }
+.hw100 { width: 100%; height: 100%; }
 .w100 { width: 100%; }
+.wMax100 { max-width: 100%; }
 .w75  { width: 75%; }
 .w50  { width: 50%; }
 .w25  { width: 25%; }
@@ -146,12 +153,7 @@ input::-webkit-inner-spin-button {
 .h50  { height: 50%; }
 .h25  { height: 25%; }
 .h-fit { height: fit-content; }
-.font1rem { font-size: 1rem; }
-.hw1 { width: 1rem; height: 1rem; }
-.hw2 { width: 2rem; height: 2rem; }
-.hw5 { width: 5rem; height: 5rem; }
-.hw10 { width: 10rem; height: 10rem; }
-.hw100 { width: 100%; height: 100%; }
+.no-w { width: unset; }
 
 /* BACKGROUND SOLID COLORS */
 .bg1, #bg1 { background-color: var(--color1); }
