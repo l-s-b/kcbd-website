@@ -33,7 +33,7 @@ export default function Product() {
             <h2>${myProduct.price}</h2>
             <center id="centerX2" className="w-fit pill centerYch row wrap evenly myBlack-bg pad1 m1">
               <span>Cantidad: </span>
-              <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill hw2" />
+              <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill hw2 pointer" />
               <b>(${qty * myProduct.price})</b>
             </center>
             <button className="pad1 pill bg2 centerXY pointer" onClick={handleCart}>Enviar Pedido!</button>
