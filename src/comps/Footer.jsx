@@ -36,7 +36,7 @@ export default function Footer() {
       <div id="mobileFooter" className="flex flexCh col centerY">
         <img className="centerXY m1y hw10" id="footerImg" src={kLogo} alt={data.logoAlt} />
         <div className="flex row wrap evenly w75">
-          <div className="col centerX m1 hw10 fw">
+          <div className="col centerX m1 hw10 fw fw2">
             <b>{data.footer.col1.title}</b>
             <p>{data.footer.col1.content}</p>
           </div>
