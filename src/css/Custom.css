@@ -3,7 +3,7 @@ body {
     --color2: #44AA33;
     --color3: #FF5511;
     --myBlack: #112211; 
-    --myWhite: #EEEEDD; 
+    --myWhite: #EEEEDD;
 }
 
 .bg1, .myWhite-bg { color: var(--myBlack); }
@@ -17,6 +17,12 @@ body {
 #footerImg {
   margin-left: 10vw;
   margin-right: 10vw;
+}
+
+.card { width: var(--cardUnit); }
+.cardImage {
+  max-width: var(--cardUnit);
+  max-height: var(--cardUnit);
 }
 
 /* SCROLLBAR */
@@ -48,12 +54,27 @@ body {
   #desktopFooter { display: flex; }
   #mobileFooter { display: none; }
   .fw { width: 20rem; }
+  body { --cardUnit: 16rem; }
+  .itemName { font-size: 1.5rem; }
+  .itemPrice { font-size: 2rem; }
 }
 @media (max-width: 1200px) {
   .fw { width: 10rem; }
+  body { --cardUnit: 14rem; }
 }
 @media (max-width: 900px) {
   #desktopFooter { display: none; }
   #mobileFooter { display: flex; }
+  .fw { height: fit-content; }
   .fw2 { width: 20rem; }
+  body { --cardUnit: 12rem; }
+  .itemName { font-size: 1rem; }
+  .itemPrice { font-size: 1.5rem; }
+  div[css2] { height: 17.5rem; }
+}
+@media (max-width: 600px) {
+  body { --cardUnit: 10rem; }
+  .itemPrice { font-size: 1.2rem; }
+  div[css] { padding: 0.5rem; }
+  div[css2] { height: 14rem; }
 }

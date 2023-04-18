@@ -31,6 +31,8 @@ button {
 
 li, h1, h2, h3 { margin: 0; }
 
+label, label:hover { cursor: unset; }
+
 li {
   font-family: var(--fonts);
   font-style: normal;
@@ -228,9 +230,13 @@ input::-webkit-inner-spin-button {
   html { font-size: 16px; }
   .wrapped { width: 50%; }
 }
+@media (max-width: 1200px) {
+  html { font-size: 14px; }
+}
 @media (max-width: 900px) {
+  html { font-size: 12px; }
   .wrapped { width: 100%; }
 }
 @media (max-width: 600px) {
-  html { font-size: 12px; }
+  html { font-size: 10px; }
 }

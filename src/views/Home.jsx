@@ -13,7 +13,7 @@ export default function Home() {
       <PageContainer showPattern={true}>
         <div className="flex row wrap vw90 bg2 centerX">
           {products.map(
-            p => <MuiCard id="bg1" className="m1 z30" item={p} />
+            (p, index) => <MuiCard id="bg1" className="m1 z30 bg1 card" item={p} />
           )}
         </div>
       </PageContainer>
