@@ -4,15 +4,18 @@ import products from '../data/products.json';
 import WB from '../comps/WhatsAppButton';
 import MuiCard from '../comps/MuiCard';
 import Footer from '../comps/Footer';
+import PageContainer from '../comps/PageContainer';
 
 export default function Home() {
   return (<>
         <MuiNavbar />
-        <div className="vw100 flex centerX bg2">
-          <div className="flex row wrap vw90 bg2 centerX">{products.map(
-            p => <MuiCard id="bg1" className="m1" item={p} />
-          )}</div>
-        </div>
+        <PageContainer showPattern={true}>
+          <div className="flex row wrap vw90 bg2 centerX">
+            {products.map(
+              p => <MuiCard id="bg1" className="m1 z30" item={p} />
+            )}
+          </div>
+        </PageContainer>
         <WB />
         <Footer />
     </>

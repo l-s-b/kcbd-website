@@ -11,20 +11,20 @@
     animation: wb 1s ease-in-out 4s forwards;
   }
   
-  .wb svg {
-    padding-left: 0.25rem;
-    width: 3rem;
-    height: auto;
-  }
-  
-  /* DYNAMIC */
-  .wb:hover {
-    transform: scale(1.1);
-    /* box-shadow: 0 0 10px 7.5px white; */
-  }
-  @keyframes wb {
-    0% { right: -7rem }
-    100% { right: 3rem }
-  }
-  
-  @media (max-width: 600px) { .wb { border-radius: 3rem; } }
+.wb svg {
+  padding-left: 0.25rem;
+  width: 3rem;
+  height: auto;
+}
+
+/* DYNAMIC */
+.wb:hover {
+  transform: scale(1.1);
+  /* box-shadow: 0 0 10px 7.5px white; */
+}
+@keyframes wb {
+  0% { right: -7rem }
+  100% { right: 3rem }
+}
+
+@media (max-width: 600px) { .wb { border-radius: 3rem; } }

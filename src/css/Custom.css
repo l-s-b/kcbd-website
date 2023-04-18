@@ -14,4 +14,30 @@ body {
     width: 5rem;
 }
 
+/* SCROLLBAR */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--myBlack) var(--myWhite);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--color2),
+        var(--color2) 1px,
+        var(--color1) 2px,
+        var(--color1) 3px,
+        var(--color2) 4px
+    );
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 8px outset var(--color1);
+  }
 

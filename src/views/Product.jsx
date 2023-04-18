@@ -7,6 +7,7 @@ import Footer from '../comps/Footer';
 import WB from '../comps/WhatsAppButton';
 import Image from '../comps/Image';
 import Counter from '../comps/Counter';
+import PageContainer from '../comps/PageContainer';
 
 export default function Product() {
   const { id } = useParams();
@@ -23,21 +24,23 @@ export default function Product() {
   return ( 
     <>
       <MuiNavbar />
-      <div className="vw100 flex centerX bg2">
-        <div className="flex row vw75 bg1 m2rem centerX2 br2">
-          <Image className="w50" fileName={myProduct.filename} alt={myProduct.name} />
-          <div className="w50 centerXY flexCh centerX centerXch">
+      <PageContainer showPattern={true}>
+        <div className="flex row wrap vw75 bg1 m2 centerX2 br2 h-fit z30">
+          <Image className="wrapped" fileName={myProduct.filename} alt={myProduct.name} />
+          <div className="wrapped centerXY flexCh centerX centerXch">
+            <div className="pad2 col">
             <h2>{myProduct.name}</h2>
-            <h3>${myProduct.price}</h3>
+            <h2>${myProduct.price}</h2>
             <center id="centerX2" className="w-fit pill centerYch row wrap evenly myBlack-bg pad1 m1">
               <span>Cantidad: </span>
-              <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill hw2rem" />
+              <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill hw2" />
               <b>(${qty * myProduct.price})</b>
             </center>
-            <button className="pad1 pill bg2 centerXY" onClick={handleCart}>Enviar Pedido!</button>
+            <button className="pad1 pill bg2 centerXY pointer" onClick={handleCart}>Enviar Pedido!</button>
+            </div>
           </div>
         </div>
-      </div>
+      </PageContainer>
       <WB />
       <Footer />
     </>
