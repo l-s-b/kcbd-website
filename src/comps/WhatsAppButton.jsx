@@ -4,7 +4,7 @@ import data from '../data/variables.json';
 import '../css/WhatsApp.css';
 
 export default function WB() {
-    const message = `https://api.whatsapp.com/send?phone=${data.contact.phone_test}&text=${data.contact.reachout}`
+    const message = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.reachout}`
   return (
     <TabLink className="wb t400" to={message}>
         <svg xmlns="http://www.w3.org/2000/svg" width="288" height="288" viewBox="0 0 24 24">
