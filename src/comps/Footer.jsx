@@ -12,13 +12,13 @@ export default function Footer() {
 
   function DesktopFooter() {
     return (
-      <div id="desktopFooter" className="flex flexCh row evenly centerX centerY centerXY">
-        <div className="col centerX hw10 fw fw2">
+      <div id="_desktopFooter" className="flex flexCh row centerY evenly">
+        <div className="col centerX hw10 _fw _fw2">
           <b>{data.footer.col1.title}</b>
           <p>{data.footer.col1.content}</p>
         </div>
-        <img className="centerXY m1y hw10" id="footerImg" src={kLogo} alt={data.logoAlt} />
-        <div className="col hw10 centerX fw">
+        <img className="m1y hw10" id="footerImg" src={kLogo} alt={data.logoAlt} />
+        <div className="col hw10 centerX _fw">
           {data.footer.col3.content.map((item, index) => (
             <TabLink to={links[index]} className="row m025">
               {icons[index]}
@@ -33,14 +33,14 @@ export default function Footer() {
 
   function MobileFooter() {
     return (
-      <div id="mobileFooter" className="flex flexCh col centerY">
+      <div id="_mobileFooter" className="flex flexCh col centerY">
         <img className="centerXY m1y hw10" id="footerImg" src={kLogo} alt={data.logoAlt} />
         <div className="flex row wrap evenly w75">
-          <div className="col centerX m1 hw10 fw fw2">
+          <div className="col centerX m1 hw10 _fw _fw2">
             <b>{data.footer.col1.title}</b>
             <p>{data.footer.col1.content}</p>
           </div>
-          <div className="col centerX m1 hw10 fw">
+          <div className="col centerX m1 hw10 _fw">
             {data.footer.col3.content.map((item, index) => (
               <TabLink to={links[index]} className="row m025">
                 {icons[index]}

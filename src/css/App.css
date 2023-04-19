@@ -22,6 +22,8 @@ a:focus {
   color: unset;
   text-decoration: none;
   overflow: hidden;
+  height: fit-content;
+  width: fit-content;
 }
 
 button {

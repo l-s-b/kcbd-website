@@ -48,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function MuiNavbar() {
-  const navItems = [["Productos", "/"], ["Preguntas Frecuentes", "/faq"]];
+  const navItems = [["Productos", "/"]];
   const headerRef = useRef(null);
   const marginRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState("nada");
@@ -63,7 +63,7 @@ export default function MuiNavbar() {
       <AppBar className="pad05 vw100 fixed z30" id="bg1" ref={headerRef}>
         <Toolbar>
           <div className="flex w100 between">
-            <NavLink to="/"><img className="navLogo" src={kLogo} alt="Kundalini CBD" /></NavLink>
+            <NavLink to="/"><img className="_navLogo" src={kLogo} alt="Kundalini CBD" /></NavLink>
             <Box className="flex row evenly pad1 centerY">
               {navItems.map((item) => (
                 <a href={item[1]} key={item}>
