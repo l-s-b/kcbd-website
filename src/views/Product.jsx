@@ -17,7 +17,7 @@ export default function Product() {
     setQty(count);
   }
   const handleCart = () => {
-    let cartMessage = `https://api.whatsapp.com/send?phone=${data.contact.phone_test}&text=${data.contact.cart}%0D%0AProducto: ${myProduct.name}%0D%0ACantidad: ${qty}%0D%0A%0D%0A*Precio total: $${myProduct.price * qty}*`
+    let cartMessage = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.cart}%0D%0AProducto: ${myProduct.name}%0D%0ACantidad: ${qty}%0D%0A%0D%0A*Precio total: $${myProduct.price * qty}*`
     window.open(cartMessage, '_blank');
   }
   
