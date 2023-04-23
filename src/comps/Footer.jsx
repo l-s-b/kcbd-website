@@ -15,7 +15,7 @@ export default function Footer() {
       <div id="_desktopFooter" className="flex flexCh row centerY evenly">
         <div className="col centerX hw10 _fw _fw2">
           <b>{data.footer.col1.title}</b>
-          <p>{data.footer.col1.content}</p>
+          {data.footer.col1.content.map(x => (<>{x}<br/></>))}
         </div>
         <img className="m1y hw10" id="footerImg" src={kLogo} alt={data.logoAlt} />
         <div className="col hw10 centerX _fw">
