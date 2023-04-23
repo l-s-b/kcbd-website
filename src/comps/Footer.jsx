@@ -9,18 +9,21 @@ export default function Footer() {
 
   const icons = [<FB />, <IG />, <Pin />];
   const links = [data.contact.fb, data.contact.ig, data.contact.pin]
+  const parsedAbout = <div className="flex col">
+    {data.footer.col1.content.map((x,i) => <span key={i}>{x}</span>)}
+  </div>;
 
   function DesktopFooter() {
     return (
       <div id="_desktopFooter" className="flex flexCh row centerY evenly">
         <div className="col centerX hw10 _fw _fw2">
           <b>{data.footer.col1.title}</b>
-          <div className="col">{data.footer.col1.content.map(x => <span>{x}</span>)}</div>
+          {parsedAbout}
         </div>
         <img className="m1y hw10" id="footerImg" src={kLogo} alt={data.logoAlt} />
         <div className="col hw10 centerX _fw">
           {data.footer.col3.content.map((item, index) => (
-            <TabLink to={links[index]} className="row m025">
+            <TabLink key={index} to={links[index]} className="row m025">
               {icons[index]}
               <RemSpacer />
               <span>{item}</span>
@@ -38,7 +41,7 @@ export default function Footer() {
         <div className="flex row wrap evenly w75">
           <div className="col centerX m1 hw10 _fw _fw2">
             <b>{data.footer.col1.title}</b>
-            <p>{data.footer.col1.content}</p>
+            {parsedAbout}
           </div>
           <div className="col centerX m1 hw10 _fw">
             {data.footer.col3.content.map((item, index) => (
