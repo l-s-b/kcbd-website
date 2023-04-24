@@ -8,6 +8,7 @@ import WB from '../comps/WhatsAppButton';
 import Image from '../comps/Image';
 import Counter from '../comps/Counter';
 import PageContainer from '../comps/PageContainer';
+import Description from '../comps/Description';
 
 export default function Product() {
   const { id } = useParams();
@@ -31,7 +32,8 @@ export default function Product() {
             <div className="pad2 col">
             <h2>{myProduct.name}</h2>
             <h2>${myProduct.price}</h2>
-            <center id="centerX2" className="w-fit pill centerYch row wrap evenly myBlack-bg pad1 m1">
+            <Description data={myProduct} />
+            <center id="centerX2" className="w-fit pill centerYch row wrap evenly dark-bg pad1 m1">
               <span>Cantidad: </span>
               <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill hw2 pointer" />
               <b>(${qty * myProduct.price})</b>

@@ -163,8 +163,8 @@ input::-webkit-inner-spin-button {
 .bg1, #bg1 { background-color: var(--color1); }
 .bg2, #bg2 { background-color: var(--color2); }
 .bg3, #bg3 { background-color: var(--color3); }
-.myBlack-bg { background-color: var(--myBlack); }
-.myWhite-bg { background-color: var(--myWhite); }
+.dark-bg { background-color: var(--dark); }
+.light-bg { background-color: var(--light); }
 .black-bg { background-color: black; }
 .white-bg { background-color: white; }
 .grey-bg { background-color: grey; }
@@ -173,8 +173,8 @@ input::-webkit-inner-spin-button {
 .color1-fill { fill: var(--color1); }
 .color2-fill { fill: var(--color2); }
 .color3-fill { fill: var(--color3); }
-.myBlack-fill { fill: var(--myBlack); }
-.myWhite-fill { fill: var(--myWhite); }
+.dark-fill { fill: var(--dark); }
+.light-fill { fill: var(--light); }
 .black-fill { fill: black; }
 .white-fill { fill: white; }
 .grey-fill { fill: grey; }
@@ -191,8 +191,8 @@ input::-webkit-inner-spin-button {
 .color1-txt { color: var(--color1); }
 .color2-txt { color: var(--color2); }
 .color3-txt { color: var(--color3); }
-.myBlack-txt, #myBlack-txt { color: var(--myBlack); }
-.myWhite-txt, #myWhite-txt { color: var(--myWhite); }
+.dark-txt, #dark-txt, .dark-txtCh * { color: var(--dark); }
+.light-txt, #light-txt, .light-txtCh * { color: var(--light); }
 .black-txt { color: black; }
 .white-txt { color: white; }
 .grey-txt { color: grey; }
