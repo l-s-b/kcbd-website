@@ -11,12 +11,23 @@ export default function Description({data}) {
         "Envíos a todo el país"
     ]
     const describeOil = data.type === 'oil' && 
-        <div className="flex col">
-            {oilDescription.map((x, index) => 
-                <span key={index}>{x}</span>
-            )}
-        </div>
+    <div className="flex col m1y">
+        {oilDescription.map((x, index) => 
+            <span key={index}>{x}</span>
+        )}
+    </div>;
+
+    const describeSeeds = data.type === 'seeds' &&
+    <div className="flex col m1y">
+        {data.desc.map((x, index) => 
+            <p key={index}>{x}</p>
+        )}
+    </div>;
+
   return (
-    <div>{describeOil}</div>
+    <div>
+        {describeOil}
+        {describeSeeds}
+    </div>
   )
 }
