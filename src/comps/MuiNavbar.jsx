@@ -3,6 +3,7 @@ import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
 /* import { Search as SearchIcon } from "@mui/icons-material"; */
 import { NavLink } from 'react-router-dom';
+import data from '../data/variables.json';
 import kLogo from "../assets/kLogo.jpeg";
 
 const Search = styled("div")(({ theme }) => ({
@@ -63,11 +64,11 @@ export default function MuiNavbar() {
       <AppBar className="pad05 vw100 fixed z30" id="bg1" ref={headerRef}>
         <Toolbar>
           <div className="flex w100 between">
-            <NavLink to="/"><img className="_navLogo" src={kLogo} alt="Kundalini CBD" /></NavLink>
+            <NavLink to="/"><img className="_navLogo" src={kLogo} alt={data.navLogoAlt} /></NavLink>
             <Box className="flex row evenly pad1 centerY">
               {navItems.map((item) => (
                 <a href={item[1]} key={item}>
-                  <Button id="myBlack-txt" sx={{ color: "#fff" }}>
+                  <Button id="dark-txt" sx={{ color: "#fff" }}>
                     {item[0]}
                   </Button>
                 </a>

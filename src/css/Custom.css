@@ -2,12 +2,12 @@ body {
     --color1: #FADD22;
     --color2: #44AA33;
     --color3: #FF5511;
-    --myBlack: #112211; 
-    --myWhite: #EEEEDD;
+    --dark: #112211; 
+    --light: #EEEEDD;
 }
 
-.bg1, .myWhite-bg { color: var(--myBlack); }
-.bg2, .bg3, .myBlack-bg { color: var(--myWhite); }
+.bg1, .light-bg { color: var(--dark); }
+.bg2, .bg3, .dark-bg { color: var(--light); }
 
  /* CUSTOM CLASSES AND IDs */
 ._navLogo {
@@ -26,11 +26,15 @@ body {
   max-height: var(--cardUnit);
 }
 
+#nostock {
+  opacity: 0.5;
+}
+
 /* SCROLLBAR */
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--myBlack) var(--myWhite);
+  scrollbar-color: var(--dark) var(--light);
 }
 
 /* Chrome, Edge, and Safari */

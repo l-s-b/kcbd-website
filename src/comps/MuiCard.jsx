@@ -5,8 +5,18 @@ import Image from "./Image";
 import { Link } from "react-router-dom";
 
 export default function MuiCard({ id, className, item }) {
+  function NoStock() {
+    return (
+      <div className="hw100 abs z40 flex col light-txtCh centerY centerX">
+        <div className="dark-bg o50 hw100 abs" />
+        <h1 className="o100 z50">Sin stock</h1>
+        <p className="o100 z50">(por el momento)</p>
+      </div>
+    )
+  }
   return (
-    <Card id={id} className={className} css2="card">
+    <Card id={id} className={`rel ${className}`} css2="card">
+      {!item.stock && <NoStock />}
       <Link className="z30" to={`/products/${item.id}`}>
         <Image
           fileName={item.filename}
