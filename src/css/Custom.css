@@ -1,3 +1,4 @@
+/* COLORS */
 body {
     --color1: #FADD22;
     --color2: #44AA33;
@@ -26,8 +27,12 @@ body {
   max-height: var(--cardUnit);
 }
 
-#nostock {
-  opacity: 0.5;
+._hLimit { max-height: 40vh; }
+
+._yFade {  
+  box-shadow:
+  0 3rem 3rem -4.5rem var(--dark) inset,
+  0 -3rem 3rem -4.5rem var(--dark) inset;
 }
 
 /* SCROLLBAR */
