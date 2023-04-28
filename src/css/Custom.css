@@ -7,8 +7,8 @@ body {
     --light: #EEEEDD;
 }
 
-.bg1, .light-bg { color: var(--dark); }
-.bg2, .bg3, .dark-bg { color: var(--light); }
+#bg1, .bg1, .light-bg { color: var(--dark); }
+#bg2, #bg3, .bg2, .bg3, .dark-bg { color: var(--light); }
 
  /* CUSTOM CLASSES AND IDs */
 ._navLogo {
