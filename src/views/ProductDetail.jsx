@@ -8,14 +8,14 @@ import PageContainer from '../comps/PageContainer';
 import Found from '../comps/Product';
 import NotFound from '../comps/Product404';
 
-export default function Product() {
+export default function ProductDetail() {
   const { id } = useParams();
   const myProduct = products.find(p => parseInt(p.id) === parseInt(id));
   
   return ( 
     <>
       <MuiNavbar />
-      <PageContainer showPattern={true} animation={!myProduct && "spin"}>
+      <PageContainer showPattern={true}>
         {myProduct ? <Found p={myProduct} /> : <NotFound /> }
       </PageContainer>
       <WB />

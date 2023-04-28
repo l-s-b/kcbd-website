@@ -1,5 +1,5 @@
 import React from 'react';
-import TabLink from './TabLink';
+import { Link } from 'react-router-dom';
 
 export default function NotFound() {
   return (
@@ -8,8 +8,8 @@ export default function NotFound() {
         <div className="z40 pad2">
             <h1>404</h1>
             <h1>🤷‍♂️🤷‍♀️</h1>
-            <p className="m1">Ese producto no existe en nuestro inventario.</p>
-            <TabLink id="bg1" className="pad1 pill m2" to="/">Volver al inicio</TabLink>
+            <p className="m2y">Ese producto no existe en nuestro inventario.</p>
+            <Link id="bg1" className="pad1 pill m2y" to="/">Volver al inicio</Link>
         </div>
     </div>
   )
