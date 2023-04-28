@@ -46,9 +46,7 @@ li {
 /* Removing arrows from number input */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
+input::-webkit-inner-spin-button { -webkit-appearance: none; }
 
 /* FLEXBOX */
 .flex, .flexCh * { display: flex; }
@@ -89,14 +87,6 @@ input::-webkit-inner-spin-button {
 .m025 { margin: 0.25rem; }
 .m05 { margin: 0.5rem; }
 .m1 { margin: 1rem; }
-.m1x {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.m1y {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 .m2 { margin: 2rem; }
 .m1x {
   margin-left: 1rem;
@@ -105,6 +95,14 @@ input::-webkit-inner-spin-button {
 .m1y {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.m2x {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.m2y {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* RADII */
@@ -118,12 +116,14 @@ input::-webkit-inner-spin-button {
 .oval { border-radius: 50%; }
 
 /* VIEWPORT */
+/* Width */
 .vw100 { width: 100vw; }
 .vw90 { width: 90vw; }
 .vw75 { width: 75vw; }
 .vw50 { width: 50vw; }
 .vw25 { width: 25vw; }
 .vw10 { width: 10vw; }
+/* Height */
 .vh100 { height: 100vh; }
 .vh100 { height: 90vh; }
 .vh75 { height: 75vh; }
@@ -142,20 +142,21 @@ input::-webkit-inner-spin-button {
 .noScrollXY { overflow: hidden; }
 
 /* SIZES */
+/* Fixed size boxes */
 .font1rem { font-size: 1rem; }
 .hw1 { width: 1rem; height: 1rem; }
 .hw2 { width: 2rem; height: 2rem; }
 .hw5 { width: 5rem; height: 5rem; }
 .hw10 { width: 10rem; height: 10rem; }
-.hw100 { width: 100%; height: 100%; }
 
+/* Relative sizes */
+.hw100 { width: 100%; height: 100%; }
 .w100 { width: 100%; }
 .w75  { width: 75%; }
 .w50  { width: 50%; }
 .w25  { width: 25%; }
 .w-fit { width: fit-content; }
 .no-w { width: unset; }
-
 .h100 { height: 100%; }
 .h90 { height: 90%; }
 .h50  { height: 50%; }
@@ -219,6 +220,8 @@ input::-webkit-inner-spin-button {
 .rel { position: relative; }
 .fixed { position: fixed; }
 .sticky { position: sticky; }
+
+/* Z-AXIS ORDER */
 .z60 { z-index: 60; }
 .z50 { z-index: 50; }
 .z40 { z-index: 40; }
