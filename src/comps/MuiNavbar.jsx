@@ -64,7 +64,10 @@ export default function MuiNavbar() {
       <AppBar className="pad05 vw100 fixed z30" id="bg1" ref={headerRef}>
         <Toolbar>
           <div className="flex w100 between">
-            <NavLink to="/"><img className="_navLogo" src={kLogo} alt={data.navLogoAlt} /></NavLink>
+            <div className="flex row centerY">
+              <NavLink to="/"><img className="_navLogo" src={kLogo} alt={data.navLogoAlt} /></NavLink>
+              <i className="m1 fs1-2 onlyDesktop">{data.slogan}</i>
+            </div>
             <Box className="flex row evenly pad1 centerY">
               {navItems.map((item) => (
                 <a href={item[1]} key={item}>
