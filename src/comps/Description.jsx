@@ -30,7 +30,7 @@ export default function Description({data}) {
     function describe(data) {
     return <div className="flex col m1 h-fit autoY">
         {descriptions[data.type].map((x, index) => 
-            <p key={index}>{x}</p>
+            x && <p key={index}>{x}</p>
         )}
     </div>;
     }
