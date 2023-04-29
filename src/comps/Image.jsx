@@ -15,6 +15,7 @@ export default function Image({ fileName, alt, className, id, ...rest }) {
                             ? className.padStart(className.length + 1)
                             : ''
                     }`}
+                    width="100%" /* To make it fit the swiper */
                     src={image}
                     alt={alt}
                     {...rest}
