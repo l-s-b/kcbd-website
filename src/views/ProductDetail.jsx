@@ -15,7 +15,7 @@ export default function ProductDetail() {
   return ( 
     <>
       <MuiNavbar />
-      <PageContainer showPattern={true}>
+      <PageContainer showPattern={true} rotate={!myProduct} >
         {myProduct ? <Found p={myProduct} /> : <NotFound /> }
       </PageContainer>
       <WB />

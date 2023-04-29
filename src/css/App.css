@@ -146,6 +146,9 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .fs1 { font-size: 1rem; }
 .fs1-2 { font-size: 1.2rem; }
 .fs1-5 { font-size: 1.5rem; }
+.fs2 { font-size: 2rem; }
+.fs4 { font-size: 4rem; }
+.fs6 { font-size: 6rem; }
 
 /* Fixed size boxes */
 .hw1 { width: 1rem; height: 1rem; }
@@ -244,6 +247,22 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .pointer:hover { cursor: pointer; }
 .forbidden:hover { cursor: not-allowed; }
 .wait { cursor: wait; }
+
+/* HOVER EFFECTS */
+.hoverToDark:hover,
+#bg1.hoverToDark:hover,
+#bg2.hoverToDark:hover,
+#bg3.hoverToDark:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+.hoverToLight:hover,
+#bg1.hoverToLight:hover,
+#bg2.hoverToLight:hover,
+#bg3.hoverToLight:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
 
 /* RESPONSIVENESS */
 @media (max-width: 5000px) {
