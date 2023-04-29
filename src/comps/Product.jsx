@@ -1,22 +1,40 @@
 import { useState } from 'react';
+import { register } from 'swiper/element/bundle';
 import data from '../data/variables.json';
 import Image from './Image';
 import Counter from './Counter';
 import Description from './Description';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/element/css/effect-fade';
+register();
 
 export default function Found({p}) {
-    const [qty, setQty] = useState(1);
-    const handleCounter = count => {
-      setQty(count);
-    }
-    const handleCart = () => {
-      let cartMessage = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.cart}%0D%0AProducto: ${p.name}%0D%0ACantidad: ${qty}%0D%0A%0D%0A*Precio total: $${p.price * qty}*`
-      window.open(cartMessage, '_blank');
-    }
+  const [qty, setQty] = useState(1);
+  const handleCounter = count => { setQty(count); }
+  const handleCart = () => {
+    let cartMessage = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.cart}%0D%0AProducto: ${p.name}%0D%0ACantidad: ${qty}%0D%0A%0D%0A*Precio total: $${p.price * qty}*`
+    window.open(cartMessage, '_blank');
+  }
 
   return (
     <div className="flex row wrap vw75 bg1 m2 centerX2 br2 h-fit z30">
-        <Image className="wrapped" fileName={p.filename} alt={p.name} />
+      <swiper-container
+        slidesPerView={1}
+        spaceBetween={0}
+        loop={true}
+        pagination={true}
+        navigation={true}
+        effect="fade"
+        class="wrapped"
+      >
+        {p.images.map(
+          (image, index) => <swiper-slide class="flex centerY">
+            <Image fileName={image} alt={p.name + index} />
+          </swiper-slide>
+        )}
+      </swiper-container>
         <div className="wrapped centerXY flexCh centerX centerXch">
             <div className="pad2 col">
                 <h2>{p.name}</h2>
