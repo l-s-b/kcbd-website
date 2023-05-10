@@ -57,12 +57,12 @@ export default function Footer() {
     )
   }
   return (
-    <>
+    <footer>
       <div className="vw100 bg1 flex col centerX rel z30">
         <DesktopFooter />
         <MobileFooter />
       </div>
       <div className="fixed bottom vw100 h25 z10 bg1" />
-    </>
+    </footer>
   )
 }
