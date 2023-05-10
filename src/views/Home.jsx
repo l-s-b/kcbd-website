@@ -11,11 +11,11 @@ export default function Home() {
     <>
       <MuiNavbar />
       <PageContainer showPattern={true}>
-        <div className="flex row wrap vw90 bg2 centerX">
+        <ul className="flex row wrap vw90 bg2 centerX">
           {products.map(
             (p, index) => <MuiCard id="bg1" key={index} className="m1 z30 bg1 _card" item={p} />
           )}
-        </div>
+        </ul>
       </PageContainer>
       <WB />
       <Footer />
