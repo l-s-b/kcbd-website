@@ -35,6 +35,10 @@ body {
   0 -3rem 3rem -4.5rem var(--dark) inset;
 }
 
+._hl[selected] {
+  background-color: var(--light);
+}
+
 /* SCROLLBAR */
 /* Firefox */
 * {

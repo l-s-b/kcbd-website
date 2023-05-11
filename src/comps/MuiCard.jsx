@@ -19,12 +19,12 @@ export default function MuiCard({ id, className, item }) {
       {!item.stock && <NoStock />}
       <Link className="z30" to={`/products/${item.id}`}>
         <Image
-          fileName={item.filename}
-          alt={item.name}
+          fileName={item.mainImage}
+          alt={item.detail}
           className="flex _cardImage centerXY"
         />
         <CardContent id={id} css="cardContent" className="center-txt flex col">
-          <label className="_itemName">{item.name}</label>
+          <label className="_itemName">{item.detail}</label>
           <b className="_itemPrice">${item.price}</b>
         </CardContent>
       </Link>
