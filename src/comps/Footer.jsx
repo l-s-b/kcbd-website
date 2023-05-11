@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
           <div className="col centerX m1 hw10 _fw">
             {data.footer.col3.content.map((item, index) => (
-              <TabLink to={links[index]} className="row m025">
+              <TabLink to={links[index]} key={index} className="row m025">
                 {icons[index]}
                 <RemSpacer />
                 <span>{item}</span>

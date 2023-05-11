@@ -1,10 +1,8 @@
 import React from 'react';
-import seedDetails from '../data/seed-details.json';
 
 export default function Description({data}) {
 
-    const notPets = ["Frutilla", "Menta", "Uva"].includes(data.flavor);
-    const foundSeedDesc = seedDetails.filter(x => x.name === data.name)[0]
+    const notPets = data.type === "oil" && ["Frutilla", "Menta", "Uva"].includes(data.oil.flavor);
     const descriptions = {
         "lotion": [
             "Crema CBD Karst 50 gr.",
@@ -14,9 +12,9 @@ export default function Description({data}) {
             "Apto celíacos",
             "Envíos a todo el país"
         ],
-        "oil": [
-            `Aceite de ${data.concentration} CBD de alta pureza`,
-            `Sabor ${data.flavor}`,
+        "oil": data.type === "oil" && [
+            `Aceite de ${data.oil.concentration} CBD de alta pureza`,
+            `Sabor ${data.oil.flavor}`,
             "Elaborado en California, Estados Unidos",
             "Testeamos en Montevideo, Uruguay",
             "Ideal para dolores, ansiedad, tratamiento de cáncer y más patologías.",
@@ -24,7 +22,7 @@ export default function Description({data}) {
             notPets && "Apto celíacos",
             "Envíos a todo el país"
         ],
-        "seedpack": foundSeedDesc ? foundSeedDesc.desc : []
+        "seedpack": data.desc || []
     }
 
     function describe(data) {
