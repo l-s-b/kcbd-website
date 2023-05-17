@@ -61,6 +61,15 @@ export default function Footer() {
       <div className="vw100 bg1 flex col centerX rel z30">
         <DesktopFooter />
         <MobileFooter />
+        <i className="pad1 abs bottom r">
+          Site by&nbsp;
+          <TabLink
+            to={"https://www.linkedin.com/in/lsb100"}
+            className="color2-txt"
+          >
+            <b>l-s-b</b>
+          </TabLink>
+        </i>
       </div>
       <div className="fixed bottom vw100 h25 z10 bg1" />
     </footer>
