@@ -130,6 +130,11 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .pill { border-radius: 50rem; }
 .oval { border-radius: 50%; }
 
+/* SHADOWS */
+.bigShadow {
+  box-shadow: 0 0 2rem 0 var(--dark);
+}
+
 /* VIEWPORT */
 #root {
   block-size: 100vh;
@@ -159,7 +164,6 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .scrollXY { overflow: scroll; }
 .autoScroll { overflow: auto; }
 .noScrollXY { overflow: hidden; }
-
 
 /* FONTS */
 .bold { font-weight: bold; }
