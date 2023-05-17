@@ -78,7 +78,22 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .pad05 { padding: 0.5rem; }
 .pad1 { padding: 1rem; }
 .pad2 { padding: 2rem; }
-
+.p1x {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.p1y {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.p2x {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.p2y {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 /* MARGINS */
 .m0, #m0 {
   margin: 0;
@@ -116,6 +131,10 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .oval { border-radius: 50%; }
 
 /* VIEWPORT */
+#root {
+  block-size: 100vh;
+  inline-size: 100vw;
+}
 /* Width */
 .vw100 { width: 100vw; }
 .vw90 { width: 90vw; }
@@ -125,7 +144,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .vw10 { width: 10vw; }
 /* Height */
 .vh100 { height: 100vh; }
-.vh100 { height: 90vh; }
+.vh90 { height: 90vh; }
 .vh75 { height: 75vh; }
 .vh50 { height: 50vh; }
 .vh25 { height: 25vh; }
@@ -218,6 +237,8 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .grey-txt { color: grey; }
 
 /* TRANSITIONS */
+.t2k { transition: 2s; }
+.t1k { transition: 1s; }
 .t600 { transition: 600ms; }
 .t400 { transition: 400ms; }
 .t200 { transition: 200ms; }
