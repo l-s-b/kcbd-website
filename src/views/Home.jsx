@@ -23,7 +23,7 @@ export default function Home() {
       {filters.map((f, index) => (
         <li key={index}>
           <button
-            id="bg2"
+            id="bg1"
             className="pill m1 pad05 o100 fs1-2 hoverToLight t200 pointer"
             onClick={() => setFilteredProducts(products.filter(f.condition))}
           >
@@ -37,7 +37,7 @@ export default function Home() {
   const Catalog = () => (
     <ul className="flex row wrap vw90 bg2 centerX centerXY">
       {filteredProducts.map((p, index) => (
-        <MuiCard id="bg1" key={index} className="m1 z30 bg1 _card" item={p} />
+        <MuiCard id="bg1" key={index} className="m1 z30 bg1 _card t1k" item={p} />
       ))}
     </ul>
   )

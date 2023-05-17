@@ -4,10 +4,15 @@ import Image from "./Image";
 import { Link } from "react-router-dom";
 
 export default function MuiCard({ id, className, item }) {
+  const overwrite = {
+    overflowX: "visible",
+    overflowY: "visible",
+    borderRadius: "1rem"
+  }
   function NoStock() {
     return (
       <div className="hw100 abs z40 flex col light-txtCh centerY centerX">
-        <div className="dark-bg o50 hw100 abs" />
+        <div className="dark-bg o50 hw100 abs br1 " />
         <h2 className="o100 z50 _itemName">{item.detail}</h2>
         <b className="o100 z50 _itemPrice">${item.price}</b>
         <h1 className="o100 z50">Sin stock</h1>
@@ -17,17 +22,23 @@ export default function MuiCard({ id, className, item }) {
   }
   function Hover() {
     return (
-      <div css="cardContent" className="hw100 abs z40 flex col centerY centerX t400">
-        <div className="bg1 o75 hw100 abs" />
-        <h2 className="o100 z50 _itemName">{item.detail}</h2>
+      <>
+      <div id="_desktopCard" style={overwrite} className="hw100 abs br1 z40 flex col centerY centerX t400">
+        <div className="bg1 br1 o75 hw100 abs" />
+        <h2 className="o100 z50 _itemName center-txt">{item.detail}</h2>
         <b className="o100 z50 _itemPrice">${item.price}</b>
       </div>
+      <div id="_mobileCard" style={overwrite} className="hw100 abs br1 z40 flex col centerY t400">
+      <h2 className="abs _outerTop center-txt bg1 p1x pill w-fit z50 _itemName">{item.detail}</h2>
+      <b className="abs _outerBottom bg1 pad05 pill w-fit z50 _itemPrice">${item.price}</b>
+    </div>
+    </>
     )
   }
   return (
-    <Card id={id} className={`rel ${className}`} css2="card">
+    <Card id={id} style={overwrite} className={`rel ${className}`} css2="card">
       {!item.stock && <NoStock />}
-      <Link id="_centerFix" className="flex hw100 z30 centerY centerX" to={`/products/${item.id}`}>
+      <Link id="_centerFix" className="flex hw100 z30 br1 centerY centerX" to={`/products/${item.id}`}>
         {item.stock && <Hover />}
         <Image
           fileName={item.mainImage}

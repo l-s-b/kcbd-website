@@ -62,11 +62,28 @@ body {
 
 *::-webkit-scrollbar-thumb { border: 8px outset var(--color1); }
 
-div[css] { opacity: 0; }
-div[css]:hover,
-div[css]:focus,
-div[css]:active { 
+#_desktopCard { 
+  display: flex;
+  opacity: 0;
+}
+#_desktopCard:hover,
+#_desktopCard:focus,
+#_desktopCard:active { 
   opacity: 1;
+}
+
+#_mobileCard {
+  display: none;
+}
+
+._outerTop {
+  display: flex;
+  top: -10%;
+  min-height: 2.5rem;
+  align-items: center;
+}
+._outerBottom {
+  bottom: -10%;
 }
 
 #_centerFix {
@@ -105,4 +122,10 @@ div[css]:active {
   body { --cardUnit: 10rem; }
   ._itemPrice { font-size: 1.2rem; }
   ._scaleWhenMobile { font-size: 1.4rem; }
+  #_desktopCard { display: none; }
+  #_mobileCard { display: flex; }
+  div[css2] {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }
