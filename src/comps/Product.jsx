@@ -41,9 +41,9 @@ export default function Found({p}) {
                 <h2>${p.price}</h2>
                 <Description data={p} />
                 <center id="centerX2" className="w-fit pill centerYch row wrap evenly dark-bg pad1 m1">
-                <span>Cantidad: </span>
-                <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x" btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer" />
-                <b>(${qty * p.price})</b>
+                <span className="fs1-2">Cantidad: </span>
+                <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x _scaleWhenMobile" btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer _scaleWhenMobile" />
+                <b className="_scaleWhenMobile">(${qty * p.price})</b>
                 </center>
                 <button className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" onClick={handleCart}>Enviar Pedido!</button>
             </div>
