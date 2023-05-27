@@ -2,7 +2,7 @@
   {
       "id": 1,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Lotus Breath x3",
       "price": 7700,
       "mainImage": "S1_LB1.webp",
@@ -32,7 +32,7 @@
   {
       "id": 2,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Sweet Dark CBD x5",
       "price": 9500,
       "mainImage": "S2_SD1.webp",
@@ -140,7 +140,7 @@
   {
       "id": 5,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Aurorita x3",
       "price": 7700,
       "mainImage": "S5_AU1.webp",
@@ -171,7 +171,7 @@
   {
       "id": 6,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Pampa Chem x3",
       "price": 7700,
       "mainImage": "S6_PC1.webp",
@@ -277,7 +277,7 @@
   {
       "id": 9,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Tierra del Fuego x3",
       "price": 7700,
       "mainImage": "S9_TF1.webp",
@@ -308,7 +308,7 @@
   {
       "id": 10,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Pampa Saurus x3",
       "price": 7700,
       "mainImage": "S10_PS1.webp",
@@ -371,7 +371,7 @@
   {
       "id": 12,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Antártida x3",
       "price": 7700,
       "mainImage": "S12_AN1.webp",
@@ -401,7 +401,7 @@
   {
       "id": 13,
       "type": "seedpack",
-      "stock": true,
+      "stock": false,
       "detail": "Uritorco Kush x3",
       "price": 7700,
       "mainImage": "S13_UK1.webp",
@@ -556,8 +556,8 @@
   {
       "id": 18,
       "type": "seedpack",
-      "stock": true,
-      "detail": "Cactus Breath x3",
+      "stock": false,
+      "detail": "Cactus Breath (S1) x3",
       "price": 7700,
       "mainImage": "S17_CB1.jpg",
       "desc": [
@@ -1027,5 +1027,102 @@
           "productId": 34,
           "concentration": "45"
       }
+  },
+  {
+    "id": 35,
+    "type": "seedpack",
+    "stock": true,
+    "detail": "Ucumar x3",
+    "price": 7500,
+    "mainImage": "S29_UC1.jpg",
+    "desc": [
+        "Blister x3 semillas.",
+        "El mítico Ucumar… una bestia enorme y salvaje, que vive en los montes y cerros del norte argentino.",
+        "A este nuevo hibrido lo nombramos así, por el gran tamaño que logran alcanzar sus ramificaciones, además de poseer vigor, fuerza, producción y resina que envuelve hasta las hojas más grandes.",
+        "Es fácil de cultivar y tiene poca demanda de nutrientes. Sin duda te conquistará al cultivarla.",
+        "El aroma de esta variedad es una mezcla perfecta de sus padres, desde caramelo de limón artificial y pino, hasta cáscara de pomelo ácido.",
+        "Un colocón cerebral y físico, euforico, positivo y alegre."
+    ],
+    "images": [
+        "S29_UC1.jpg",
+        "S29_UC2.jpg",
+        "pampa.jpg"
+    ],
+    "cartId": null,
+    "seedpack": {
+        "id": 35,
+        "productId": 35,
+        "seedType": "Fotoperiódica",
+        "thc": null,
+        "cbd": null,
+        "sativaRatio": null
+    },
+    "oil": null,
+    "lotion": null
+  },
+  {
+    "id": 36,
+    "type": "seedpack",
+    "stock": true,
+    "detail": "Haze x5",
+    "price": 10500,
+    "mainImage": "S30_HZ1.jpg",
+    "desc": [
+        "Blister x5 semillas.",
+        "En esta interesante hibridación buscamos una cepa con predominancia sativa. El resultado de cinco años de trabajo nos ha premiado con una cepa de rápido e intenso crecimiento con cogollos alargados similares a la campeona Super Lemon Haze. Tiende a espigarse y dominar el resto de una camada de autos con su elegancia, altura y gran producción.",
+        "Aroma: Sobresale el intenso cítrico a limón dulce y un exquisito sabor a queso suave.",
+        "Sabor: Lemon pie y mix de frutos rojos.",
+        "Efecto: inmediato, sensaciones de alegría y euforia rebosante, ideal para comenzar la mañana."
+    ],
+    "images": [
+        "S30_HZ1.jpg",
+        "pampa.jpg"
+    ],
+    "cartId": null,
+    "seedpack": {
+        "id": 36,
+        "productId": 36,
+        "seedType": "Automática",
+        "thc": null,
+        "cbd": null,
+        "sativaRatio": null
+    },
+    "oil": null,
+    "lotion": null
+  },
+  {
+    "id": 37,
+    "type": "seedpack",
+    "stock": true,
+    "detail": "Girl Scout Gorilla x5",
+    "price": 10500,
+    "mainImage": "S31_GS1.jpg",
+    "desc": [
+        "BLISTER x5 SEMILLAS.",
+        "VARIEDAD:  GIRL SCOUT GORILLA",
+        "MADRE: GORILLA GIRL XL AUTO",
+        "REVERSIÓN:  SWEET GELATO",
+        "PRODUCCIÓN: indoor: 350-380gr/m2 - exterior: 35-95gr/planta",
+        "THC: 16,9% - CBD: 0,2%",
+        "AROMA / SABOR: DULCE Y ESPECIADO CON TONOS CITRICOS DE LIMON.",
+        "EFECTO: EUFÓRICO, ANIMADO, ALEGRE.",
+        "SATIVA/INDICA: 45,2% / 52,3%",
+        "TIEMPO DE VIDA TOTAL: 75-90 DIAS."
+    ],
+    "images": [
+        "S31_GS1.jpg",
+        "pampa.jpg"
+    ],
+    "cartId": null,
+    "seedpack": {
+        "id": 37,
+        "productId": 37,
+        "seedType": "Automática",
+        "thc": null,
+        "cbd": null,
+        "sativaRatio": null
+    },
+    "oil": null,
+    "lotion": null
   }
 ]

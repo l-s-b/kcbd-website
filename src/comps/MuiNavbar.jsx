@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
-/* import { Search as SearchIcon } from "@mui/icons-material"; */
+import { Search as SearchIcon } from "@mui/icons-material";
 import { NavLink } from 'react-router-dom';
 import data from '../data/variables.json';
 import kLogo from "../assets/kLogo.jpeg";
@@ -48,17 +48,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function MuiNavbar() {
+export default function MuiNavbar({onSearchChange}) {
   const navItems = [["Productos", "/"]];
   const headerRef = useRef(null);
   const marginRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState("nada");
+
+  const handleSearch = e => {
+    e.preventDefault();
+    onSearchChange(e.target.value);
+  }
+
   useEffect(() => {
     if (headerRef) {
       setHeaderHeight(headerRef.current.clientHeight)
       marginRef.current.style.height = headerHeight + "px";
     }
   }, [headerHeight])
+
   return (
     <>
       <AppBar className="pad05 vw100 fixed z30" id="bg1" ref={headerRef}>
@@ -76,15 +83,16 @@ export default function MuiNavbar() {
                   </Button>
                 </a>
               ))}
-             {/*  <Search>
+              <Search className="onlyDesktop">
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder="Buscar..."
                   inputProps={{ "aria-label": "search" }}
+                  onChange={handleSearch}
                 />
-              </Search> */}
+              </Search>
             </Box>
           </div>
         </Toolbar>
