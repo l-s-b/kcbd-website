@@ -71,7 +71,7 @@ export default function Footer() {
           </TabLink>
         </i>
       </div>
-      <div className="fixed bottom vw100 h25 z10 bg1" />
+      <div className="fixed bottom vw100 h25 z-10 bg1" />
     </footer>
   )
 }

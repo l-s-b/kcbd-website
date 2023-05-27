@@ -10,6 +10,12 @@ export default function Home() {
 
   const [filteredProducts, setFilteredProducts] = useState(products)
 
+  const handleSearchChange = value => {
+    setFilteredProducts(products.filter(
+      p => p.detail.toLowerCase().includes(value.toLowerCase())
+    ));
+  }
+
   const filters = [
     { string: "Todos los productos", condition: x => true },
     { string: "Automáticas", condition: x => x.seedpack?.seedType === "Automática" },
@@ -39,12 +45,16 @@ export default function Home() {
       {filteredProducts.map((p, index) => (
         <MuiCard id="bg1" key={index} className="m1 z30 bg1 _card t1k" item={p} />
       ))}
+      {
+        filteredProducts.length === 0 &&
+        <h2>Uh, no encontramos nada con ese nombre!</h2>
+      }
     </ul>
   )
 
   return (
     <>
-      <MuiNavbar />
+      <MuiNavbar onSearchChange={handleSearchChange} />
       <PageContainer showPattern={true}>
         <FilterMenu />
         <Catalog />

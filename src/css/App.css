@@ -261,7 +261,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .z20 { z-index: 20; }
 .z10 { z-index: 10; }
 .z0 { z-index: 0; }
-.z-1 { z-index: -1; }
+.z-10 { z-index: -10; }
 
 /* ABSOLUTES */
 .top { top: 0%; }
@@ -319,8 +319,8 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 @media (max-width: 900px) {
   html { font-size: 12px; }
   .wrapped { width: 100%; }
-  .onlyDesktop { display: none; }
 }
 @media (max-width: 600px) {
   html { font-size: 10px; }
+  .onlyDesktop { display: none; }
 }

@@ -12,11 +12,11 @@ export default function MuiCard({ id, className, item }) {
   function NoStock() {
     return (
       <div className="hw100 abs z40 flex col light-txtCh centerY centerX">
-        <div className="dark-bg o50 hw100 abs br1 " />
+        <div className="dark-bg o75 hw100 abs br1 " />
         <h2 className="o100 z50 _itemName">{item.detail}</h2>
         <b className="o100 z50 _itemPrice">${item.price}</b>
         <h1 className="o100 z50">Sin stock</h1>
-        <p className="o100 z50">(por el momento)</p>
+        <i className="o100 z50 center-txt">Preguntá por alternativas!</i>
       </div>
     )
   }
