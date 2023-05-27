@@ -1031,7 +1031,7 @@
   {
     "id": 35,
     "type": "seedpack",
-    "stock": true,
+    "stock": false,
     "detail": "Ucumar x3",
     "price": 7500,
     "mainImage": "S29_UC1.jpg",
@@ -1063,7 +1063,7 @@
   {
     "id": 36,
     "type": "seedpack",
-    "stock": true,
+    "stock": false,
     "detail": "Haze x5",
     "price": 10500,
     "mainImage": "S30_HZ1.jpg",
@@ -1093,7 +1093,7 @@
   {
     "id": 37,
     "type": "seedpack",
-    "stock": true,
+    "stock": false,
     "detail": "Girl Scout Gorilla x5",
     "price": 10500,
     "mainImage": "S31_GS1.jpg",
