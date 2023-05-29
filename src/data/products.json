@@ -899,7 +899,7 @@
       "type": "oil",
       "stock": true,
       "detail": "CBD Karst 45% Pets",
-      "price": 7500,
+      "price": 7700,
       "mainImage": "A1_P45.jpg",
       "desc": [],
       "images": [
@@ -922,7 +922,7 @@
       "type": "oil",
       "stock": true,
       "detail": "CBD Karst 45% Menta",
-      "price": 7500,
+      "price": 7700,
       "mainImage": "A2_M45.jpg",
       "desc": [],
       "images": [
@@ -945,7 +945,7 @@
       "type": "oil",
       "stock": true,
       "detail": "CBD Karst 90% Menta",
-      "price": 13000,
+      "price": 13500,
       "mainImage": "A3_M90.jpg",
       "desc": [],
       "images": [
@@ -968,7 +968,7 @@
       "type": "oil",
       "stock": true,
       "detail": "CBD Karst 45% Frutilla",
-      "price": 7500,
+      "price": 7700,
       "mainImage": "A4_F45.jpg",
       "desc": [],
       "images": [
@@ -991,7 +991,7 @@
       "type": "oil",
       "stock": true,
       "detail": "CBD Karst 90% Frutilla",
-      "price": 13000,
+      "price": 13500,
       "mainImage": "A5_F90.jpg",
       "desc": [],
       "images": [
