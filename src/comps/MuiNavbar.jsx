@@ -3,6 +3,7 @@ import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
 import { NavLink } from 'react-router-dom';
+import HeaderAlert from './HeaderAlert';
 import data from '../data/variables.json';
 import kLogo from "../assets/kLogo.jpeg";
 
@@ -48,6 +49,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 export default function MuiNavbar({onSearchChange}) {
   const navItems = [["Productos", "/"]];
   const headerRef = useRef(null);
@@ -60,15 +62,24 @@ export default function MuiNavbar({onSearchChange}) {
   }
 
   useEffect(() => {
-    if (headerRef) {
-      setHeaderHeight(headerRef.current.clientHeight)
-      marginRef.current.style.height = headerHeight + "px";
-    }
-  }, [headerHeight])
+    const handleResize = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.clientHeight);
+        marginRef.current.style.height = headerHeight + "px";
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+
+  }, [headerHeight]);
 
   return (
     <>
-      <AppBar className="pad05 vw100 fixed z30" id="bg1" ref={headerRef}>
+      <AppBar className="pad05 vw100 fixed visible z30" id="bg1" ref={headerRef}>
         <Toolbar>
           <div className="flex w100 between">
             <div className="flex row centerY">
@@ -97,6 +108,7 @@ export default function MuiNavbar({onSearchChange}) {
           </div>
         </Toolbar>
       </AppBar>
+      <HeaderAlert headerHeight={headerHeight} />
       <div ref={marginRef} className='bg2'></div>
       </>
   );

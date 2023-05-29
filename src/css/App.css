@@ -164,6 +164,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .scrollXY { overflow: scroll; }
 .autoScroll { overflow: auto; }
 .noScrollXY { overflow: hidden; }
+.visible { overflow: visible; }
 
 /* FONTS */
 .bold { font-weight: bold; }
@@ -211,6 +212,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .black-bg { background-color: black; }
 .white-bg { background-color: white; }
 .grey-bg { background-color: grey; }
+.blue-bg { background-color: blue; }
 
 /* SVG BACKGROUND COLORS */
 .color1-fill { fill: var(--color1); }
@@ -305,6 +307,27 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 #bg2.hoverToBG3:hover {
   background-color: var(--color3);
   color: var(--dark);
+}
+
+/* ANIMATIONS */
+.modal {
+  --headerHeight: 1px;
+}
+
+.roll-down {
+  animation: roll-down 5s linear forwards;
+}
+.roll-back-up {
+  animation: roll-back-up 1s linear forwards;
+}
+
+@keyframes roll-down {
+  50% { transform: translateY(0%); }
+  100% {transform: translateY(var(--headerHeight)); }
+}
+@keyframes roll-back-up {
+  0% { transform: translateY(var(--headerHeight)); }
+  100% { transform: translateY(0%); }
 }
 
 /* RESPONSIVENESS */
