@@ -11,9 +11,11 @@ export default function Home() {
   const [filteredProducts, setFilteredProducts] = useState(products)
 
   const handleSearchChange = value => {
-    setFilteredProducts(products.filter(
+    setFilteredProducts(products
+    .filter(
       p => p.detail.toLowerCase().includes(value.toLowerCase())
-    ));
+    )
+    );
   }
 
   const filters = [
@@ -42,9 +44,14 @@ export default function Home() {
  
   const Catalog = () => (
     <ul className="flex row wrap vw90 bg2 centerX centerXY">
-      {filteredProducts.map((p, index) => (
+      {filteredProducts
+      .sort(function(a) {
+        if (a.stock) {return -1} else {return 1}
+      })
+      .map((p, index) => (
         <MuiCard id="bg1" key={index} className="m1 z30 bg1 _card t1k" item={p} />
-      ))}
+      ))
+      }
       {
         filteredProducts.length === 0 &&
         <h2>Uh, no encontramos nada con ese nombre!</h2>
