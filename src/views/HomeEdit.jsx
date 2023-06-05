@@ -117,8 +117,8 @@ filter = correctedFilters[filter]
 
   return (
     <>
-      <MuiNavbar onSearchChange={handleSearchChange} />
-      <PageContainer showPattern={true}>
+      <MuiNavbar showSearch={true} onSearchChange={handleSearchChange} />
+      <PageContainer showPattern={true} rotate={filteredProducts === null}>
         <FilterMenu />
         <Catalog />
       </PageContainer>
