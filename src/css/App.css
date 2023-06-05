@@ -232,6 +232,12 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .o50 { opacity: 50%; }
 .o0 { opacity: 0; }
 
+/* BLUR */
+.blurXS { backdrop-filter: blur(2px); }
+.blurS { backdrop-filter: blur(8px); }
+.blurM { backdrop-filter: blur(14px); }
+.blurL { backdrop-filter: blur(20px); }
+
 /* TEXT COLORS */
 .color1-txt { color: var(--color1); }
 .color2-txt { color: var(--color2); }

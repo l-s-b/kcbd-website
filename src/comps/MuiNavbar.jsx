@@ -50,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-export default function MuiNavbar({onSearchChange}) {
+export default function MuiNavbar({showSearch, onSearchChange}) {
   const navItems = [["Productos", "/"]];
   const headerRef = useRef(null);
   const marginRef = useRef(null);
@@ -87,14 +87,15 @@ export default function MuiNavbar({onSearchChange}) {
               <i className="m1 fs1-2 onlyDesktop">{data.slogan}</i>
             </div>
             <Box className="flex row evenly pad1 centerY">
-              {navItems.map((item) => (
+              {navItems.map(item => 
+                item[0] === "Productos" && !showSearch && 
                 <a href={item[1]} key={item}>
                   <Button id="dark-txt" sx={{ color: "#fff" }}>
                     {item[0]}
                   </Button>
                 </a>
-              ))}
-              <Search className="onlyDesktop">
+              )}
+              { showSearch && <Search>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
@@ -103,7 +104,7 @@ export default function MuiNavbar({onSearchChange}) {
                   inputProps={{ "aria-label": "search" }}
                   onChange={handleSearch}
                 />
-              </Search>
+              </Search> }
             </Box>
           </div>
         </Toolbar>

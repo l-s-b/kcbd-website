@@ -6,9 +6,7 @@ export default function Image({ fileName, alt, className, id, ...rest }) {
     if (error) return <span>{alt}</span>
     return (
         <>
-            {loading ? (
-                <span>Cargando . . .</span>
-            ) : (
+            {loading ? ("") : (
                 <img
                     className={`Image${
                         className
