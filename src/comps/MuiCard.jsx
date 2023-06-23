@@ -35,11 +35,12 @@ export default function MuiCard({ id, className, item }) {
     </>
     )
   }
-  return (
+  return item.stock && (
     <Card id={id} style={overwrite} className={`rel ${className}`} css2="card">
-      {!item.stock && <NoStock />}
+      {/* {!item.stock && <NoStock />} */}
       <Link id="_centerFix" className="flex hw100 z30 br1 centerY centerX" to={`/products/${item.id}`}>
-        {item.stock && <Hover />}
+        {/* {item.stock && <Hover />} */}
+        <Hover />
         <Image
           fileName={item.mainImage}
           alt={item.detail}
