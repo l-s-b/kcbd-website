@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emotion/styled": "^11.10.6",
+    "@mercadopago/sdk-react": "^0.0.11",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.11.16",
     "@mui/styled-engine": "^5.11.16",
@@ -11,6 +12,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "mercadopago": "^1.5.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",

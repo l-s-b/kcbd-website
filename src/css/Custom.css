@@ -21,6 +21,23 @@ body {
   margin-right: 10vw;
 }
 
+#_mp * {
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#_mp div {
+  display: flex;
+  flex-direction: column;
+}
+#_mp button {
+  width: fit-content;
+}
+#_mp p, span {
+  flex-wrap: wrap;
+  word-wrap: normal;
+}
+
 ._card { width: var(--cardUnit); }
 ._cardImage {
   max-width: var(--cardUnit);

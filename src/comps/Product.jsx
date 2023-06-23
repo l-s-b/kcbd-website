@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import axios from 'axios';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import { register } from 'swiper/element/bundle';
 import data from '../data/variables.json';
 import Image from './Image';
@@ -9,13 +11,39 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/element/css/effect-fade';
 register();
+initMercadoPago("APP_USR-f95276bf-d49a-4c5e-a7a3-d9e18666baad");
 
 export default function Found({p}) {
   const [qty, setQty] = useState(1);
-  const handleCounter = count => { setQty(count); }
+  const [preferenceId, setPreferenceId] = useState(null);
+  
+  const handleCounter = count => { 
+    setQty(count);
+  }
   const handleCart = () => {
     let cartMessage = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.cart}%0D%0AProducto: ${p.detail}%0D%0ACantidad: ${qty}%0D%0A%0D%0A*Precio total: $${p.price * qty}*`
     window.open(cartMessage, '_blank');
+  }
+  const createPref = async () => {
+    try {
+      const response = await axios.post(
+          `${data.backend2}/create_preference`,
+          {
+            detail: p.detail,
+            price: p.price,
+            qty: qty,
+            currency_id: "ARS"
+          }
+        );
+        const { id } = response.data;
+        return id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleMP = async () => {
+    const id = await createPref();
+    if (id) { setPreferenceId(id) }
   }
 
   return (
@@ -45,7 +73,22 @@ export default function Found({p}) {
                 <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x _scaleWhenMobile" btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer _scaleWhenMobile" />
                 <b className="_scaleWhenMobile">(${qty * p.price})</b>
                 </center>
-                <button className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" onClick={handleCart}>Enviar Pedido!</button>
+                <button
+                  className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
+                  onClick={handleCart}
+                >
+                  Enviar Pedido!
+                </button>
+                
+                {preferenceId ?
+                <div id="_mp"><Wallet initialization={{preferenceId}} /></div>
+                : <button
+                className="pad1 m1y pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
+                onClick={handleMP}
+              >
+                MP
+              </button>
+              }
             </div>
         </div>
     </div>
