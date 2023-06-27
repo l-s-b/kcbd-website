@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/element/css/effect-fade';
 register();
-initMercadoPago("APP_USR-f95276bf-d49a-4c5e-a7a3-d9e18666baad");
+initMercadoPago("APP_USR-2074cd4c-4f91-475c-803f-60a4f640c72f");
 
 export default function Found({p}) {
   const [qty, setQty] = useState(1);
