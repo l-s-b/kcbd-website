@@ -5,7 +5,7 @@ import { Search as SearchIcon } from "@mui/icons-material";
 import { NavLink } from 'react-router-dom';
 import HeaderAlert from './HeaderAlert';
 import data from '../data/variables.json';
-import kLogo from "../assets/kLogo.jpeg";
+import kLogo from "../assets/kLogo_.webp";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
