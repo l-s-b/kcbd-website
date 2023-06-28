@@ -1,6 +1,6 @@
 import React from 'react';
 import data from '../data/variables.json';
-import kLogo from '../assets/kLogo.jpeg';
+import kLogo from '../assets/kLogo.webp';
 import { FacebookRounded as FB, Instagram as IG, LocationOn as Pin } from '@mui/icons-material';
 import RemSpacer from './RemSpacer';
 import TabLink from './TabLink';
