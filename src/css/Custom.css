@@ -25,6 +25,7 @@ body {
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
+  width: fit-content;
 }
 #_mp div {
   display: flex;
@@ -36,6 +37,7 @@ body {
 #_mp p, span {
   flex-wrap: wrap;
   word-wrap: normal;
+  white-space: normal;
 }
 
 ._card { width: var(--cardUnit); }

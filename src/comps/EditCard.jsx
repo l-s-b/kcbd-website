@@ -40,7 +40,7 @@ export default function EditCard({ id, className, item }) {
     try {
       e.target.value = "Actualizando..."
     const updated = await axios.patch(`${data.backend}/product/${id}`, editBody);
-    e.target.value = "OK!";
+    e.target.value = updated && "OK!";
     } catch (error) {
       console.error(error)
       e.target.value = "Error :(";
