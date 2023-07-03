@@ -106,7 +106,7 @@ filter = correctedFilters[filter]
         <EditCard id="bg1" key={index} className="m1 z30 bg1 _card t1k" item={p} />
       ));
       if (filteredProducts === null) {
-        return catalogContainer(<h2>Cargando...</h2>);
+        return catalogContainer(<li><h2>Cargando...</h2></li>);
       }
       if (filteredProducts.length === 0) {
         return catalogContainer(
