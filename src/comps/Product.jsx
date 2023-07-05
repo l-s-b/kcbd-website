@@ -13,14 +13,7 @@ register();
 
 export default function Found({p}) {
   const [qty, setQty] = useState(1);
-  
-  const handleCounter = count => { 
-    setQty(count);
-  }
-  const handleCart = () => {
-    let cartMessage = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.cart}%0D%0AProducto: ${p.detail}%0D%0ACantidad: ${qty}%0D%0A%0D%0A*Precio total: $${p.price * qty}*`
-    window.open(cartMessage, '_blank');
-  }
+  const handleCounter = count => { setQty(count); }
 
   return (
     <div className="flex row wrap vw75 bg1 m2y centerX2 br2 h-fit z30">
@@ -46,15 +39,14 @@ export default function Found({p}) {
                 <Description data={p} />
                 <center id="centerX2" className="w-fit pill centerYch row wrap evenly dark-bg pad1 m1">
                 <span className="fs1-2">Cantidad: </span>
-                <Counter qty={qty} changeFx={count => handleCounter(count)} className="flex row m1x _scaleWhenMobile" btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer _scaleWhenMobile" />
+                <Counter
+                  qty={qty}
+                  changeFx={count => handleCounter(count)}
+                  className="flex row m1x _scaleWhenMobile"
+                  btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer _scaleWhenMobile"
+                />
                 <b className="_scaleWhenMobile">(${qty * p.price})</b>
                 </center>
-                <button
-                  className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
-                  onClick={handleCart}
-                >
-                  Enviar Pedido!
-                </button>
                 <MuiModalMP data={data} p={p} qty={qty} />
             </div>
         </div>

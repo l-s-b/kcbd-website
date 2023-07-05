@@ -21,25 +21,6 @@ body {
   margin-right: 10vw;
 }
 
-#_mp * {
-  overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: fit-content;
-}
-#_mp div {
-  display: flex;
-  flex-direction: column;
-}
-#_mp button {
-  width: fit-content;
-}
-#_mp p, span {
-  flex-wrap: wrap;
-  word-wrap: normal;
-  white-space: normal;
-}
-
 ._card { width: var(--cardUnit); }
 ._cardImage {
   max-width: var(--cardUnit);
@@ -108,6 +89,15 @@ body {
 #_centerFix {
   height: 100%;
   width: 100%;
+}
+
+._valid {
+  border: 4px outset limegreen;
+  background-color: lightgreen;
+}
+._notValid {
+  border: 4px outset coral;
+  background-color: lightcoral;
 }
 
 /* RESPONSIVENESS */
