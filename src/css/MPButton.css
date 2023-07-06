@@ -1,0 +1,28 @@
+/* MP BUTTON CUSTOM ID (and children) */
+#_mp p, #_mp div, #_mp span {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  #_mp span { margin: 0 0.5rem; }
+  #_mp button { margin-top: 1rem; }
+  #_mp button[aria-label="Pagar con Mercado Pago"] {
+    min-width: unset;
+    padding-block: 2.5rem;
+    white-space: normal;
+  }
+  #_mp div[tabindex="0"] { margin: unset; }
+
+/* RESPONSIVENESS */
+@media (max-width: 910px) {
+    #_mp button[aria-label="Pagar con Mercado Pago"] {
+        padding-block: 4rem;
+    }
+}
+@media (max-width: 600px) {
+    #_mp button[aria-label="Pagar con Mercado Pago"] {
+        padding-block: calc(10vh - 7vw + 0.5rem);
+    }
+}
