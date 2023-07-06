@@ -8,22 +8,11 @@ import '../css/MPButton.css';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 initMercadoPago("APP_USR-2074cd4c-4f91-475c-803f-60a4f640c72f", {locale: 'es-AR'});
 
-const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '50%',
-  boxShadow: 24,
-  p: 4
-};
-
 export default function MuiModalMP({data, p, qty}) {
+
+  // STATES
   const [preferenceId, setPreferenceId] = useState(null);
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-/*   const handleClose = () => setOpen(false); */
-  const [paymentInfo, setPaymentInfo] = useState({});
   const [form, setForm] = useState({
       "name": "",
       "sf": false,
@@ -34,6 +23,8 @@ export default function MuiModalMP({data, p, qty}) {
       "phone": "",
       "email": ""
   })
+
+  // DECLARATIONS
   let allFieldsOK = null;
   const validations = {
     "name": form.name.length > 5 && form.name.includes(" "),
@@ -43,6 +34,22 @@ export default function MuiModalMP({data, p, qty}) {
     "address": form.address.length > 5 && form.address.includes(" "),
     "phone": form.phone.length >= 7,
     "email": form.email.length >= 7 && form.email.includes("@") && form.email.includes("."),
+  }
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '50%',
+    boxShadow: 24,
+    p: 4
+  };
+
+  // ACTIONS AND HANDLERS
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+    setPreferenceId(null);
   }
 
   function validateThisField(e, key) {
@@ -69,15 +76,8 @@ export default function MuiModalMP({data, p, qty}) {
   }
 
   const createPref = async () => {
-    const elegida = p.elegida;
-    const freeShipping = p.price * qty > 40000
-    const courierPrice = (elegida || freeShipping) ? 0 : form.sf ? 500 : 1100;
-    setPaymentInfo({
-      detail: p.detail,
-      price: p.price + (courierPrice/qty),
-      qty: qty,
-      currency_id: "ARS"
-    })
+    const freeShipping = p.elegida || p.price * qty > 40000
+    const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
     try {
       const response = await axios.post(
           `${data.backend}/create_preference`,
@@ -98,9 +98,12 @@ export default function MuiModalMP({data, p, qty}) {
   const handleMPSubmit = async () => {
     validateAll();
     const id = allFieldsOK && await createPref();
-    allFieldsOK && document.querySelectorAll('.formMP input').forEach(
-      input => input.disabled = true
-    )
+    if (allFieldsOK) {
+      document.querySelectorAll('.formMP input')
+      .forEach(input => input.disabled = true);
+      document.querySelector('#formMP').style.display = "none";
+      document.querySelector('.modalHeader').style.display = "none";
+    }
     if (id) { setPreferenceId(id) }
   }
 
@@ -119,29 +122,70 @@ export default function MuiModalMP({data, p, qty}) {
       document.querySelector(`input[name="postal"]`).classList.remove('_valid');
     }
   }
-/* Just to check the form is working okay. Delete or comment when debugged or done
-  useEffect(() => { console.log(form); }, [form]);
-  */
 
   function handleFormChange(e) {
     document.querySelector(`input[name=${e.target.name}]`).classList.remove('_valid');
     document.querySelector(`input[name=${e.target.name}]`).classList.remove('_notValid');
     e.preventDefault();
-      setForm(form => ({
-        ...form,
-        [e.target.name]: e.target.value,
-      }));
-    }
+    setForm(form => ({
+      ...form,
+      [e.target.name]: e.target.value,
+    }));
+  }
 
-  const MPButton = () => preferenceId &&
-  <div id="_mp">
-    <Wallet initialization={{preferenceId}} />
+  function sendCartData() {
+    const freeShipping = p.elegida || p.price * qty > 40000
+    const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
+    const finalPrice = p.price * qty + courierPrice;
+    const dataSendURL = (
+      `https://api.whatsapp.com/` +
+      `send?phone=${data.contact.phone}` +
+      `&text=${data.contact.cart}` +
+      `%0D%0AProducto: ${p.detail}` +
+      `%0D%0ACantidad: ${qty}`+
+      `%0D%0A*Precio total: $${finalPrice}*` +
+      `%0D%0A%0D%0ADatos para el envío:` +
+      `%0D%0A%0D%0ARecibe: ${form.name}` +
+      `%0D%0AProvincia: ${form.prov}` +
+      `%0D%0ACiudad: ${form.city}` +
+      `%0D%0ACódigo Postal: ${form.postal}` +
+      `%0D%0ADirección: ${form.address}` +
+      `%0D%0ATeléfono: ${form.phone}` +
+      `%0D%0ACorreo electrónico: ${form.email}`
+      );
+      window.open(dataSendURL, "_blank")
+  }
+
+  const BuyAndNotify = () => preferenceId &&
+  <div id="lastSteps" className="flex col centerXch">
+    <h2>¡Últimos pasos!</h2>
+    <p>1. Hacer el pago aquí:</p>
+    <div id="_mp">
+      <Wallet initialization={{
+        preferenceId,
+        redirectMode: 'blank'
+      }} />
+    </div>
+    <p>2. Enviar los detalles de tu compra aquí:</p>
+    <button
+      className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
+      onClick={sendCartData}
+    >
+      Enviar data
+    </button>
+    <p>También nos ayuda mucho que nos compartas el comprobante de pago 💚</p>
+    <button
+      className="pad1 m2y pill bg2 hoverToDark t400 centerXY pointer"
+      onClick={handleClose}
+    >
+      Listo! Volver
+    </button>
   </div>
 
   const showLocationInputs = {
     "display": form.sf ? "none" : "flex"
   }
-
+  // RENDERING
   return (
     <div className="t400">
       <button className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" onClick={handleOpen}>
@@ -190,9 +234,9 @@ export default function MuiModalMP({data, p, qty}) {
               Correo electrónico
               <input type="email" value={form.email} name="email" onBlur={e => validateThisField(e, null)} onChange={handleFormChange} id="" />
             </label>
-            <input type="button" id="bg2" className="m1y pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" value="Enviar datos" onClick={handleMPSubmit} />
+            <input type="button" id="bg2" className="m1y pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" value="Cargar datos" onClick={handleMPSubmit} />
           </form>
-          {MPButton()}
+          {BuyAndNotify()}
         </Box>
       </Modal>
     </div>
