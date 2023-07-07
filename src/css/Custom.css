@@ -91,6 +91,15 @@ body {
   width: 100%;
 }
 
+._valid {
+  border: 4px outset limegreen;
+  background-color: lightgreen;
+}
+._notValid {
+  border: 4px outset coral;
+  background-color: lightcoral;
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 5000px) {
   #_desktopFooter { display: flex; }
