@@ -213,6 +213,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .white-bg { background-color: white; }
 .grey-bg { background-color: grey; }
 .blue-bg { background-color: blue; }
+.no-bg, #no-bg { background: none; }
 
 /* SVG BACKGROUND COLORS */
 .color1-fill { fill: var(--color1); }

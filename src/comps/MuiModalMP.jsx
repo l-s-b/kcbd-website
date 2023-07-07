@@ -6,7 +6,7 @@ import axios from 'axios';
 import '../css/MPButton.css';
 
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
-initMercadoPago("APP_USR-2074cd4c-4f91-475c-803f-60a4f640c72f", {locale: 'es-AR'});
+initMercadoPago(process.env.REACT_APP_MP_PUBLIC_KEY, {locale: 'es-AR'});
 
 export default function MuiModalMP({data, p, qty}) {
 

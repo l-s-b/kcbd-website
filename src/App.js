@@ -13,7 +13,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/e76c98592c638ca3e93658f960a0f67e" element={<HomeEdit />} />
+        <Route path={`/${process.env.REACT_APP_EDIT_HASH}`} element={<HomeEdit />} />
         <Route path="/products/:id" element={<ProductDetail />} />
       </Routes>
     </Router>

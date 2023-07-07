@@ -6,7 +6,7 @@ import "../css/WhatsApp.css";
 export default function WB() {
   const message = `https://api.whatsapp.com/send?phone=${data.contact.phone}&text=${data.contact.reachout}`;
   return (
-    <TabLink className="wb t400" to={message}>
+    <TabLink className="wb t400" to={message} title="Escribinos por WhatsApp">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="288"

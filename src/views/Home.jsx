@@ -118,10 +118,10 @@ export default function Home() {
         />
       ));
     if (filteredProducts === null) {
-      return catalogContainer(<h2>Cargando...</h2>);
+      return catalogContainer(<li><h2>Cargando...</h2></li>);
     }
     if (filteredProducts.length === 0) {
-      return catalogContainer(<h2>Uh, no encontramos productos para tu búsqueda!</h2>);
+      return catalogContainer(<li><h2>Uh, no encontramos productos para tu búsqueda!</h2></li>);
     } else {
       return catalogContainer(catalog);
     }
