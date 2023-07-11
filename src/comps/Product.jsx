@@ -4,10 +4,6 @@ import data from '../data/variables.json';
 import Image from './Image';
 import Counter from './Counter';
 import Description from './Description';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/element/css/effect-fade';
 import MuiModalMP from './MuiModalMP';
 register();
 

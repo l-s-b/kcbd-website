@@ -1,7 +1,6 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import Image from "./Image";
-import { Link } from "react-router-dom";
 
 export default function MuiCard({ id, className, item }) {
   const overwrite = {
@@ -38,7 +37,7 @@ export default function MuiCard({ id, className, item }) {
   return item.stock && (
     <Card id={id} style={overwrite} className={`rel ${className}`} css2="card">
       {/* {!item.stock && <NoStock />} */}
-      <Link id="_centerFix" className="flex hw100 z30 br1 centerY centerX" to={`/products/${item.id}`}>
+      <a id="_centerFix" className="flex hw100 z30 br1 centerY centerX" href={`/products/${item.id}`}>
         {/* {item.stock && <Hover />} */}
         <Hover />
         <Image
@@ -46,7 +45,7 @@ export default function MuiCard({ id, className, item }) {
           alt={item.detail}
           className="flex _cardImage centerXY"
         />
-      </Link>
+      </a>
     </Card>
   );
 }

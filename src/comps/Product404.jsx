@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default function NotFound() {
   return (
@@ -8,8 +7,12 @@ export default function NotFound() {
         <div className="z40 pad2">
             <h1 className="fs6">404</h1>
             <h1 className="fs6">🤷‍♂️🤷‍♀️</h1>
-            <p className="m2y fs1-5">Lo sentimos, no encontramos ese producto en nuestro inventario.</p>
-            <Link id="bg1" className="pad1 pill m2y fs1-5 t200 hoverToDark" to="/">Volver al inicio</Link>
+            <p className="m2y fs1-5">
+              Lo sentimos, no encontramos ese producto en nuestro inventario.
+            </p>
+            <a id="bg1" className="pad1 pill m2y fs1-5 t200 hoverToDark" href="/">
+              Volver al inicio
+            </a>
         </div>
     </div>
   )
