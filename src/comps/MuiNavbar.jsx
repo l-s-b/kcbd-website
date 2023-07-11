@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { styled, alpha } from "@mui/material/styles";
 import { AppBar, Box, Button, InputBase, Toolbar } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
-import { NavLink } from 'react-router-dom';
 import HeaderAlert from './HeaderAlert';
 import data from '../data/variables.json';
 import kLogo from "../assets/kLogo_.webp";
@@ -83,7 +82,7 @@ export default function MuiNavbar({showSearch, onSearchChange}) {
         <Toolbar>
           <div className="flex w100 between">
             <div className="flex row centerY">
-              <NavLink to="/"><img className="_navLogo" src={kLogo} alt={data.navLogoAlt} /></NavLink>
+              <a href="/"><img className="_navLogo" src={kLogo} alt={data.navLogoAlt} /></a>
               <i className="m1 fs1-2 onlyDesktop">{data.slogan}</i>
             </div>
             <Box className="flex row evenly pad1 centerY">
