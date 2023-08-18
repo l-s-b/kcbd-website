@@ -2,11 +2,17 @@ import React from 'react';
 import MuiNavbar from '../comps/MuiNavbar';
 import Footer from '../comps/Footer';
 import PageContainer from '../comps/PageContainer';
+import data from '../data/variables.json';
 
 export default function SendPurchaseMessage() {
 
   function openMessageTab() {
-    const purchaseURL = localStorage.getItem('lastPurchaseMsg')
+    let purchaseURL = localStorage.getItem('lastPurchaseMsg')
+    if (!purchaseURL) {
+      purchaseURL = `https://api.whatsapp.com/` +
+      `send?phone=${data.contact.phone}` +
+      `&text=Hola! Acabo de comprarte productos por KundaliniCBD.com. Coordinamos para el envío?`
+    }
     window.open(purchaseURL, "__blank")
   }
 
