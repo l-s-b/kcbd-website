@@ -133,7 +133,15 @@ export default function MuiModalMP({data, p, qty}) {
     }));
   }
 
-  function sendCartData() {
+  function setCart() {
+    const currentCart = localStorage.getItem('carrito');
+    console.log(currentCart);
+    if (!currentCart) {
+      localStorage.setItem('carrito', [])
+    }
+  }
+
+  function saveCartMsg() {
     const freeShipping = p.elegida || p.price * qty > 40000
     const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
     const finalPrice = p.price * qty + courierPrice;
@@ -153,26 +161,21 @@ export default function MuiModalMP({data, p, qty}) {
       `%0D%0ATeléfono: ${form.phone}` +
       `%0D%0ACorreo electrónico: ${form.email}`
       );
-      window.open(dataSendURL, "_blank")
+
+      localStorage.setItem('lastMsg', [dataSendURL])
   }
 
   const BuyAndNotify = () => preferenceId &&
   <div id="lastSteps" className="flex col centerXch">
-    <h2>¡Últimos pasos!</h2>
-    <p>1. Hacer el pago aquí:</p>
+    {saveCartMsg()}
+    <h2>¡Último paso!</h2>
+    <p>Hacer el pago aquí:</p>
     <div id="_mp">
       <Wallet initialization={{
         preferenceId,
         redirectMode: 'blank'
       }} />
     </div>
-    <p>2. Enviar los detalles de tu compra aquí:</p>
-    <button
-      className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
-      onClick={sendCartData}
-    >
-      Enviar data
-    </button>
     <p>También nos ayuda mucho que nos compartas el comprobante de pago 💚</p>
     <button
       className="pad1 m2y pill bg2 hoverToDark t400 centerXY pointer"
@@ -188,6 +191,7 @@ export default function MuiModalMP({data, p, qty}) {
   // RENDERING
   return (
     <div className="t400">
+      {setCart()}
       <button className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" onClick={handleOpen}>
         Comprar Online
       </button>
@@ -201,7 +205,14 @@ export default function MuiModalMP({data, p, qty}) {
           <form id="formMP" className="formMP col" autoComplete='off'>
             <label className="centerXY col">
               Nombre completo
-              <input type="text" value={form.name} name="name" onChange={handleFormChange} onBlur={e => validateThisField(e, null)} id="" />
+              <input
+                type="text"
+                value={form.name}
+                name="name"
+                onChange={handleFormChange}
+                onBlur={e => validateThisField(e, null)}
+                id=""
+              />
             </label>
             <label className="centerXY wrap centerX centerY">
               ¿Te enviamos a ciudad de Santa Fe?
@@ -212,29 +223,80 @@ export default function MuiModalMP({data, p, qty}) {
             </label>
             <label style={showLocationInputs} className="centerXY col">
               Provincia
-              <input type="text" value={form.prov} name="prov" onChange={handleFormChange} onBlur={e => validateThisField(e, null)} disabled={form.sf} id="" />
+              <input
+                type="text"
+                value={form.prov}
+                name="prov"
+                onChange={handleFormChange}
+                onBlur={e => validateThisField(e, null)}
+                disabled={form.sf}
+                id=""
+              />
             </label>
             <label style={showLocationInputs} className="centerXY col">
               Localidad
-              <input type="text" value={form.city} name="city" onChange={handleFormChange} onBlur={e => validateThisField(e, null)} disabled={form.sf} id="" />
+              <input
+                type="text"
+                value={form.city}
+                name="city"
+                onChange={handleFormChange}
+                onBlur={e => validateThisField(e, null)}
+                disabled={form.sf}
+                id=""
+              />
             </label>
             <label style={showLocationInputs} className="centerXY col">
               Código Postal
-              <input type="number" value={form.postal} name="postal" disabled={form.sf} onBlur={e => validateThisField(e, null)} onChange={handleFormChange} id="" />
+              <input
+                type="number"
+                value={form.postal}
+                name="postal"
+                disabled={form.sf}
+                onBlur={e => validateThisField(e, null)}
+                onChange={handleFormChange}
+                id=""
+              />
             </label>
             <label className="centerXY col">
               Dirección
-              <input type="text" value={form.address} name="address" onBlur={e => validateThisField(e, null)} onChange={handleFormChange} id="" />
+              <input
+                type="text"
+                value={form.address}
+                name="address"
+                onBlur={e => validateThisField(e, null)}
+                onChange={handleFormChange}
+                id=""
+              />
             </label>
             <label className="centerXY col">
               N° de teléfono
-              <input type="number" value={form.phone} name="phone" onBlur={e => validateThisField(e, null)} onChange={handleFormChange} id="" />
+              <input
+                type="number"
+                value={form.phone}
+                name="phone"
+                onBlur={e => validateThisField(e, null)}
+                onChange={handleFormChange}
+                id=""
+              />
             </label>
             <label className="centerXY col">
               Correo electrónico
-              <input type="email" value={form.email} name="email" onBlur={e => validateThisField(e, null)} onChange={handleFormChange} id="" />
+              <input
+                type="email"
+                value={form.email}
+                name="email"
+                onBlur={e => validateThisField(e, null)}
+                onChange={handleFormChange}
+                id=""
+              />
             </label>
-            <input type="button" id="bg2" className="m1y pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" value="Cargar datos" onClick={handleMPSubmit} />
+            <input
+              type="button"
+              id="bg2"
+              className="m1y pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
+              value="Cargar datos"
+              onClick={handleMPSubmit}
+            />
           </form>
           {BuyAndNotify()}
         </Box>
