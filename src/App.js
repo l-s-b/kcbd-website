@@ -6,6 +6,7 @@ import ProductDetail from './views/ProductDetail';
 import ScrollToTop from './comps/ScrollToTop';
 import './css/App.css';
 import "./css/Custom.css";
+import SendPurchaseMessage from './views/SendPurchaseMessage';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path={`/${process.env.REACT_APP_EDIT_HASH}`} element={<HomeEdit />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/compra-exitosa" element={<SendPurchaseMessage />} />
       </Routes>
     </Router>
   );

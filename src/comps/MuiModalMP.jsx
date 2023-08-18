@@ -76,7 +76,8 @@ export default function MuiModalMP({data, p, qty}) {
   }
 
   const createPref = async () => {
-    const freeShipping = p.elegida || p.price * qty > 40000
+    const dontShipImTesting = form.name === "Don't Ship I'm Testing";
+    const freeShipping = p.elegida || p.price * qty > 40000 || dontShipImTesting;
     const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
     try {
       const response = await axios.post(
@@ -162,10 +163,10 @@ export default function MuiModalMP({data, p, qty}) {
       `%0D%0ACorreo electrónico: ${form.email}`
       );
 
-      localStorage.setItem('lastMsg', [dataSendURL])
+      localStorage.setItem('lastPurchaseMsg', [dataSendURL])
   }
 
-  const BuyAndNotify = () => preferenceId &&
+  const Buy = () => preferenceId &&
   <div id="lastSteps" className="flex col centerXch">
     {saveCartMsg()}
     <h2>¡Último paso!</h2>
@@ -173,16 +174,9 @@ export default function MuiModalMP({data, p, qty}) {
     <div id="_mp">
       <Wallet initialization={{
         preferenceId,
-        redirectMode: 'blank'
+        redirectMode: 'self'
       }} />
     </div>
-    <p>También nos ayuda mucho que nos compartas el comprobante de pago 💚</p>
-    <button
-      className="pad1 m2y pill bg2 hoverToDark t400 centerXY pointer"
-      onClick={handleClose}
-    >
-      Listo! Volver
-    </button>
   </div>
 
   const showLocationInputs = {
@@ -298,7 +292,7 @@ export default function MuiModalMP({data, p, qty}) {
               onClick={handleMPSubmit}
             />
           </form>
-          {BuyAndNotify()}
+          {Buy()}
         </Box>
       </Modal>
     </div>
