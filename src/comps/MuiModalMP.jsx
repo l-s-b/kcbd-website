@@ -163,7 +163,7 @@ export default function MuiModalMP({data, p, qty}) {
       `%0D%0ACorreo electrónico: ${form.email}`
       );
 
-      localStorage.setItem('lastPurchaseMsg', [dataSendURL])
+      localStorage.setItem('lastPurchaseMsg', dataSendURL)
   }
 
   const Buy = () => preferenceId &&
