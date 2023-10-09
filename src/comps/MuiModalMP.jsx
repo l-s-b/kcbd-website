@@ -8,7 +8,7 @@ import '../css/MPButton.css';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 initMercadoPago(process.env.REACT_APP_MP_PUBLIC_KEY, {locale: 'es-AR'});
 
-export default function MuiModalMP({data, p, qty, disabled}) {
+export default function MuiModalMP({data, p, qty, IS_SOLD_OUT}) {
 
   // STATES
   const [preferenceId, setPreferenceId] = useState(null);
@@ -187,9 +187,9 @@ export default function MuiModalMP({data, p, qty, disabled}) {
     <div className="t400">
       {setCart()}
       <button
-        className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
+        className={`pad1 pill bg2 fs1-2 bold ${!IS_SOLD_OUT && "hoverToDark t400"} centerXY pointer ${IS_SOLD_OUT && "forbidden"}`}
         onClick={handleOpen}
-        disabled={disabled}
+        disabled={IS_SOLD_OUT}
       >
         Comprar Online
       </button>

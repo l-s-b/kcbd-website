@@ -10,13 +10,16 @@ register();
 export default function Found({p}) {
   const [qty, setQty] = useState(1);
   const handleCounter = count => { setQty(count); }
+  const IS_SOLD_OUT = p.desc[0] === "*** GENÉTICA AGOTADA! ***"
 
   return (
     <div className="flex row wrap vw75 bg1 m2y centerX2 br2 h-fit z30">
       <swiper-container
         slidesPerView={1}
         spaceBetween={0}
-        loop={true}
+        autoplay-delay="5000"
+        speed="700"
+        loop={false}
         pagination={true}
         navigation={true}
         effect="fade"
@@ -33,17 +36,20 @@ export default function Found({p}) {
                 <h2>{p.detail}</h2>
                 <h2>${p.price}</h2>
                 <Description data={p} />
-                <center id="centerX2" className="w-fit pill centerYch row wrap evenly dark-bg pad1 m1">
-                <span className="fs1-2">Cantidad: </span>
-                <Counter
-                  qty={qty}
-                  changeFx={count => handleCounter(count)}
-                  className="flex row m1x _scaleWhenMobile"
-                  btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer _scaleWhenMobile"
-                />
-                <b className="_scaleWhenMobile">(${qty * p.price})</b>
-                </center>
-                <MuiModalMP data={data} p={p} qty={qty} />
+                {
+                  !IS_SOLD_OUT &&
+                  <center id="centerX2" className="w-fit pill centerYch row wrap evenly dark-bg pad1 m1">
+                    <span className="fs1-2">Cantidad: </span>
+                    <Counter
+                      qty={qty}
+                      changeFx={count => handleCounter(count)}
+                      className="flex row m1x _scaleWhenMobile"
+                      btn="bg1 pill fs1-2 bold hoverToBG2 hw2 t200 pointer _scaleWhenMobile"
+                    />
+                    <b className="_scaleWhenMobile">(${qty * p.price})</b>
+                  </center>
+                }
+                <MuiModalMP data={data} p={p} qty={qty} IS_SOLD_OUT={IS_SOLD_OUT} />
             </div>
         </div>
     </div>
