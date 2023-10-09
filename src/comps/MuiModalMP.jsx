@@ -78,7 +78,7 @@ export default function MuiModalMP({data, p, qty, disabled}) {
   const createPref = async () => {
     const dontShipImTesting = form.name === "Don't Ship I'm Testing";
     const freeShipping = p.elegida || p.price * qty > 45000 || dontShipImTesting;
-    const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
+    const courierPrice = freeShipping ? 0 : form.sf ? 900 : 1900;
     try {
       const response = await axios.post(
           `${data.backend}/create_preference`,
@@ -143,8 +143,8 @@ export default function MuiModalMP({data, p, qty, disabled}) {
   }
 
   function saveCartMsg() {
-    const freeShipping = p.elegida || p.price * qty > 40000
-    const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
+    const freeShipping = p.elegida || p.price * qty > 45000
+    const courierPrice = freeShipping ? 0 : form.sf ? 900 : 1900;
     const finalPrice = p.price * qty + courierPrice;
     const dataSendURL = (
       `https://api.whatsapp.com/` +
