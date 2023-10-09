@@ -8,7 +8,7 @@ import '../css/MPButton.css';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 initMercadoPago(process.env.REACT_APP_MP_PUBLIC_KEY, {locale: 'es-AR'});
 
-export default function MuiModalMP({data, p, qty}) {
+export default function MuiModalMP({data, p, qty, disabled}) {
 
   // STATES
   const [preferenceId, setPreferenceId] = useState(null);
@@ -77,7 +77,7 @@ export default function MuiModalMP({data, p, qty}) {
 
   const createPref = async () => {
     const dontShipImTesting = form.name === "Don't Ship I'm Testing";
-    const freeShipping = p.elegida || p.price * qty > 40000 || dontShipImTesting;
+    const freeShipping = p.elegida || p.price * qty > 45000 || dontShipImTesting;
     const courierPrice = freeShipping ? 0 : form.sf ? 500 : 1100;
     try {
       const response = await axios.post(
@@ -186,7 +186,11 @@ export default function MuiModalMP({data, p, qty}) {
   return (
     <div className="t400">
       {setCart()}
-      <button className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer" onClick={handleOpen}>
+      <button
+        className="pad1 pill bg2 fs1-2 bold hoverToDark t400 centerXY pointer"
+        onClick={handleOpen}
+        disabled={disabled}
+      >
         Comprar Online
       </button>
       <Modal
