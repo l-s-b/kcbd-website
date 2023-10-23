@@ -77,7 +77,7 @@ export default function MuiModalMP({data, p, qty, IS_SOLD_OUT}) {
 
   const createPref = async () => {
     const dontShipImTesting = form.name === "Don't Ship I'm Testing";
-    const freeShipping = p.elegida || p.price * qty > 45000 || dontShipImTesting;
+    const freeShipping = p.elegida || p.price * qty > 55000 || dontShipImTesting;
     const courierPrice = freeShipping ? 0 : form.sf ? 900 : 1900;
     try {
       const response = await axios.post(
@@ -143,7 +143,7 @@ export default function MuiModalMP({data, p, qty, IS_SOLD_OUT}) {
   }
 
   function saveCartMsg() {
-    const freeShipping = p.elegida || p.price * qty > 45000
+    const freeShipping = p.elegida || p.price * qty > 55000
     const courierPrice = freeShipping ? 0 : form.sf ? 900 : 1900;
     const finalPrice = p.price * qty + courierPrice;
     const dataSendURL = (
