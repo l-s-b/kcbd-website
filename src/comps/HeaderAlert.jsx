@@ -20,7 +20,7 @@ export default function HeaderAlert({ headerHeight }) {
       style={alertTranslation}
       className="abs l r z30 pad05 blue-bg light-txt center-txt roll-down"
     >
-      <b>Envíos gratis para tus compras a partir de $45000!</b>
+      <b>Envíos gratis para tus compras a partir de $55000!</b>
     </div>
   );
 }
