@@ -48,6 +48,7 @@ body {
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar { width: 14px; }
+#root { margin-right: 100px; }
 
 *::-webkit-scrollbar-track {
   background: repeating-linear-gradient(
