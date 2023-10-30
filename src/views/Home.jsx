@@ -6,6 +6,7 @@ import WB from "../comps/WhatsAppButton";
 import MuiCard from "../comps/MuiCard";
 import Footer from "../comps/Footer";
 import PageContainer from "../comps/PageContainer";
+import HomeSlider from "../comps/HomeSlider";
 
 export default function Home() {
   const [allProducts, setAllProducts] = useState([]);
@@ -105,7 +106,7 @@ export default function Home() {
   );
 
   const catalogContainer = (content) => (
-    <ul className="flex row wrap vw90 bg2 centerX centerXY">{content}</ul>
+    <ul className="flex row wrap vw90 bg2 m1y centerX centerXY">{content}</ul>
   );
 
   function Catalog() {
@@ -131,6 +132,7 @@ export default function Home() {
     <>
       <MuiNavbar showSearch={true} onSearchChange={handleSearchChange} />
       <PageContainer showPattern={true} rotate={filteredProducts === null}>
+        <HomeSlider />
         <FilterMenu />
         <Catalog />
       </PageContainer>
