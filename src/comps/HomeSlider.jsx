@@ -1,6 +1,5 @@
 import { register } from 'swiper/element/bundle';
 import Image from "./Image";
-import '../css/Swiper.css';
 import useResize from './useResize';
 register();
 
