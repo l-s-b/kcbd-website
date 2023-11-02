@@ -4,10 +4,11 @@ import useResize from './useResize';
 register();
 
 export default function HomeSlider() {
+  const onlyShowIfMobile = useResize().ratio === "landscape" ? "none" : "flex"
     return (
         <swiper-container
           class="m2y flex"
-          style={{marginTop: "2rem", maxWidth: "100vw", backdropFilter: "blur(4px) brightness(0.6)"}}
+          style={{marginTop: "2rem", maxWidth: "100vw", backdropFilter: "blur(4px) brightness(0.6)", display: onlyShowIfMobile}}
           slides-per-view={useResize().slidesPerView}
           spaceBetween={0}
           effect="fade" // "flip" "slide" "cards" "fade" "coverflow" "cube"
