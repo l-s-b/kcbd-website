@@ -19,7 +19,7 @@ export default function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`${data.backend}/product/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_LINK}/product/${id}`);
         const product = response.data;
         setMyProduct({found: true, data: product});
       } catch (error) {

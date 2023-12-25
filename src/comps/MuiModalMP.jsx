@@ -81,7 +81,7 @@ export default function MuiModalMP({data, p, qty, IS_SOLD_OUT}) {
     const courierPrice = freeShipping ? 0 : form.sf ? 900 : 1900;
     try {
       const response = await axios.post(
-          `${data.backend}/create_preference`,
+          `${process.env.REACT_APP_BACKEND_LINK}/create_preference`,
           {
             detail: p.detail,
             price: p.price + (courierPrice/qty),
