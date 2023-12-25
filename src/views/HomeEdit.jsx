@@ -35,7 +35,7 @@ filter = correctedFilters[filter]
         },
         "order": [["id", "ASC"]]
       };
-      const response = await axios.get(`${data.backend}/products/filter`, body);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_LINK}/products/filter`, body);
       const products = response.data;
       setAllProducts(products);
       setFilteredProducts(products.filter(x => x.seedpack?.seedType === filter));
@@ -48,7 +48,7 @@ filter = correctedFilters[filter]
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${data.backend}/products`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_LINK}/products`);
         const products = response.data;
         setAllProducts(products);
         setFilteredProducts(products);

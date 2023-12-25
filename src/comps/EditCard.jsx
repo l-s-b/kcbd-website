@@ -39,7 +39,7 @@ export default function EditCard({ id, className, item }) {
   const handleUpdate = async (e, id) => {
     try {
       e.target.value = "Actualizando..."
-    const updated = await axios.patch(`${data.backend}/product/${id}`, editBody);
+    const updated = await axios.patch(`${process.env.REACT_APP_BACKEND_LINK}/product/${id}`, editBody);
     e.target.value = updated && "OK!";
     } catch (error) {
       console.error(error)

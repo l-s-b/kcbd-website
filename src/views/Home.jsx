@@ -39,7 +39,7 @@ export default function Home() {
         where: { "$seedpack.seedType$": filter },
       };
       setFilteredProducts(null)
-      const response = await axios.get(`${data.backend}/products/filter`, body);
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_LINK}/products/filter`, body);
       const products = response.data;
       setAllProducts(products);
       setFilteredProducts(
@@ -55,7 +55,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${data.backend}/products`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_LINK}/products`);
         const products = response.data;
         setAllProducts(products);
         setFilteredProducts(products);
