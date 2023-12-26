@@ -78,7 +78,7 @@ export default function MuiModalMP({data, p, qty, IS_SOLD_OUT}) {
   const createPref = async () => {
     const dontShipImTesting = form.name === "Don't Ship I'm Testing";
     const freeShipping = p.elegida || p.price * qty > 55000 || dontShipImTesting;
-    const courierPrice = freeShipping ? 0 : form.sf ? 900 : 1900;
+    const courierPrice = freeShipping ? 0 : form.sf ? 1200 : 2200;
     try {
       const response = await axios.post(
           `${process.env.REACT_APP_BACKEND_LINK}/create_preference`,
