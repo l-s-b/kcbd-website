@@ -136,7 +136,7 @@ export default function MuiModalMP({data, p, qty, IS_SOLD_OUT}) {
 
   function setCart() {
     const currentCart = localStorage.getItem('carrito');
-    console.log(currentCart);
+    /* console.log(currentCart); */
     if (!currentCart) {
       localStorage.setItem('carrito', [])
     }
