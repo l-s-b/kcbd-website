@@ -22,7 +22,8 @@ export default function Description({data}) {
             notPets && "Apto celíacos",
             "Envíos a todo el país"
         ],
-        "seedpack": data.desc || []
+        "seedpack": data.desc || [],
+        "merch": data.desc || []
     }
 
     function describe(data) {
