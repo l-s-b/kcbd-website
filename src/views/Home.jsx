@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import MuiNavbar from "../comps/MuiNavbar";
-import data from "../data/variables.json";
 import WB from "../comps/WhatsAppButton";
 import MuiCard from "../comps/MuiCard";
 import Footer from "../comps/Footer";
