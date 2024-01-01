@@ -20,7 +20,7 @@ export default function Home() {
       string: "Fotoperiódicas",
       condition: (x) => x.seedpack?.seedType === "Fotoperiódica",
     },
-    /*{ string: "Regulares", condition: x => x.seedpack?.seedType === "Regular" },*/
+    { string: "Regulares", condition: (x) => x.seedpack?.seedType === "Regular" },
     { string: "Aceites", condition: (x) => x.type === "oil" },
     { string: "Cremas", condition: (x) => x.type === "lotion" },
   ];
