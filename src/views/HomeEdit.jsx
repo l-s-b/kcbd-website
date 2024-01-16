@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MuiNavbar from '../comps/MuiNavbar';
-import data from '../data/variables.json';
 import WB from '../comps/WhatsAppButton';
 import EditCard from '../comps/EditCard';
 import Footer from '../comps/Footer';
@@ -14,7 +13,7 @@ export default function HomeEdit() {
     { string: "Todos los productos", condition: x => true },
     { string: "Automáticas", condition: x => x.seedpack?.seedType === "Automática" },
     { string: "Fotoperiódicas", condition: x => x.seedpack?.seedType === "Fotoperiódica" },
-    /*{ string: "Regulares", condition: x => x.seedpack?.seedType === "Regular" },*/
+    { string: "Regulares", condition: x => x.seedpack?.seedType === "Regular" },
     { string: "Aceites", condition: x => x.type === "oil" },
     { string: "Cremas", condition: x => x.type === "lotion" }
   ];

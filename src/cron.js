@@ -3,9 +3,9 @@
 import axios from 'axios';
 
 export default function cron() {
-    const keepAliveCron = setInterval(
-        () => {
-            axios.get(`${process.env.REACT_APP_BACKEND_LINK}cron`)
+    setInterval(
+        async () => {
+            await axios.get(`${process.env.REACT_APP_BACKEND_LINK}cron`)
         },
         15*60*1000
     );

@@ -63,7 +63,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .center-txt { text-align: center; }
 .centerX, .centerXch * { justify-content: center; }
 .centerY, .centerYch * { align-items: center; }
-.centerXY { margin: auto; }
+.centerXY, .centerXYch * { margin: auto; }
 .centerX2, #centerX2 {
   margin-left: auto;
   margin-right: auto;
@@ -72,6 +72,11 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
   margin-top: auto;
   margin-bottom: auto;
 }
+/* OFFSETTING */
+.left { justify-content: left; }
+.right { justify-content: right; }
+.start { justify-content: start; }
+.end { justify-content: end; }
 
 /* PADDING */
 .pad0 { padding: 0; }
