@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Card from "@mui/material/Card";
 import Image from "./Image";
-import data from "../data/variables.json"
 import axios from "axios";
 
 export default function EditCard({ id, className, item }) {
